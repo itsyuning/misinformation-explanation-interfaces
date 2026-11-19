@@ -1,0 +1,5222 @@
+{
+  "schema_version": 1,
+  "meta": {
+    "built_at": "2026-04-21T04:05:36Z",
+    "dataset": "Ambrosio1994/real-and-fake-news",
+    "split": "train",
+    "model": "hamzab/roberta-fake-news-classification",
+    "seed": 1234,
+    "n": 25,
+    "n_groups": 5,
+    "study_design": true,
+    "min_per_topic": 5,
+    "confidence_bins": {
+      "low_max": 0.7,
+      "mid_max": 0.9
+    },
+    "decision": {
+      "fake_threshold": 0.5
+    },
+    "shap": {
+      "enabled": true,
+      "max_evals": 16,
+      "batch_size": 8,
+      "target": "logit(P(FAKE))"
+    },
+    "design": {
+      "group_labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "topic_order": [
+        "POLITICS",
+        "HEALTH",
+        "SCI_TECH",
+        "BUSINESS",
+        "SOCIETY"
+      ],
+      "condition_order": [
+        "C0",
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ],
+      "condition_lists": {
+        "1": {
+          "C0": "A",
+          "C1": "B",
+          "C2": "C",
+          "C3": "D",
+          "C4": "E"
+        },
+        "2": {
+          "C0": "B",
+          "C1": "C",
+          "C2": "D",
+          "C3": "E",
+          "C4": "A"
+        },
+        "3": {
+          "C0": "C",
+          "C1": "D",
+          "C2": "E",
+          "C3": "A",
+          "C4": "B"
+        },
+        "4": {
+          "C0": "D",
+          "C1": "E",
+          "C2": "A",
+          "C3": "B",
+          "C4": "C"
+        },
+        "5": {
+          "C0": "E",
+          "C1": "A",
+          "C2": "B",
+          "C3": "C",
+          "C4": "D"
+        }
+      }
+    }
+  },
+  "items": [
+    {
+      "id": "Ambrosio1994_real-and-fake-news_train_wl_news_whitelist_v11_selected_grouped.csv_24",
+      "source": "AFP Fact Check",
+      "topic": "SOCIETY",
+      "group": "E",
+      "title": "Posts Claim Australia Signed WEF Treaty to Close Banks",
+      "content": "Online posts claimed Australia signed a World Economic Forum treaty to close major banks and shift toward a cashless society. The posts circulated with screenshot threads, legal-style captions, and comments about financial control.",
+      "truth": {
+        "label": "FAKE"
+      },
+      "ai": {
+        "label": "FAKE",
+        "probs": {
+          "FAKE": 0.9999803304672241,
+          "TRUE": 1.9682591300806962e-05
+        },
+        "correct": true,
+        "confidence": 0.9999803304672241,
+        "conf_bin": "high"
+      },
+      "xai": {
+        "target": "logit(P(FAKE))",
+        "title_segments": [
+          {
+            "text": "Posts ",
+            "shap": 0.29193815495818853
+          },
+          {
+            "text": "Claim ",
+            "shap": 0.29193815495818853
+          },
+          {
+            "text": "Australia ",
+            "shap": 0.29193815495818853
+          },
+          {
+            "text": "Signed ",
+            "shap": 0.29193815495818853
+          },
+          {
+            "text": "WEF ",
+            "shap": 0.5838348846882582
+          },
+          {
+            "text": "Treaty ",
+            "shap": 0.2919174423441291
+          },
+          {
+            "text": "to ",
+            "shap": 0.2919174423441291
+          },
+          {
+            "text": "Close ",
+            "shap": 0.2919174423441291
+          },
+          {
+            "text": "Banks",
+            "shap": 0.2919174423441291
+          }
+        ],
+        "content_segments": [
+          {
+            "text": "Online ",
+            "shap": -0.12847698419152395
+          },
+          {
+            "text": "posts ",
+            "shap": -0.12847698419152395
+          },
+          {
+            "text": "claimed ",
+            "shap": -0.12847698419152395
+          },
+          {
+            "text": "Australia ",
+            "shap": -0.12847698419152395
+          },
+          {
+            "text": "signed ",
+            "shap": -0.12847698419152395
+          },
+          {
+            "text": "a ",
+            "shap": -0.12847698419152395
+          },
+          {
+            "text": "World ",
+            "shap": -0.12847698419152395
+          },
+          {
+            "text": "Economic ",
+            "shap": -0.12847698419152395
+          },
+          {
+            "text": "Forum ",
+            "shap": -0.12847698419152395
+          },
+          {
+            "text": "treaty ",
+            "shap": -0.12847698419152395
+          },
+          {
+            "text": "to ",
+            "shap": -0.12847698419152395
+          },
+          {
+            "text": "close ",
+            "shap": -0.12847698419152395
+          },
+          {
+            "text": "major ",
+            "shap": -0.12847698419152395
+          },
+          {
+            "text": "banks ",
+            "shap": -0.12847698419152395
+          },
+          {
+            "text": "and ",
+            "shap": -0.12847698419152395
+          },
+          {
+            "text": "shift ",
+            "shap": -0.13620023993971928
+          },
+          {
+            "text": "toward ",
+            "shap": -0.13620023993971928
+          },
+          {
+            "text": "a ",
+            "shap": -0.13620023993971928
+          },
+          {
+            "text": "cashless ",
+            "shap": -0.2724004798794385
+          },
+          {
+            "text": "society. ",
+            "shap": -0.2724004798794385
+          },
+          {
+            "text": "The ",
+            "shap": 0.004079965444711538
+          },
+          {
+            "text": "posts ",
+            "shap": 0.004079965444711538
+          },
+          {
+            "text": "circulated ",
+            "shap": 0.004079965444711538
+          },
+          {
+            "text": "with ",
+            "shap": 0.004079965444711538
+          },
+          {
+            "text": "screenshot ",
+            "shap": 0.004079965444711538
+          },
+          {
+            "text": "threads, ",
+            "shap": 0.008159930889423076
+          },
+          {
+            "text": "legal-style ",
+            "shap": 0.012239896334134616
+          },
+          {
+            "text": "captions, ",
+            "shap": 0.012239896334134616
+          },
+          {
+            "text": "and ",
+            "shap": 0.002513461642795139
+          },
+          {
+            "text": "comments ",
+            "shap": 0.002513461642795139
+          },
+          {
+            "text": "about ",
+            "shap": 0.002513461642795139
+          },
+          {
+            "text": "financial ",
+            "shap": 0.002513461642795139
+          },
+          {
+            "text": "control.<",
+            "shap": 0.005026923285590278
+          }
+        ],
+        "base_value": 10.729598857167282
+      }
+    },
+    {
+      "id": "Ambrosio1994_real-and-fake-news_train_wl_news_whitelist_v11_selected_grouped.csv_0",
+      "source": "European Council on Foreign Relations",
+      "topic": "POLITICS",
+      "group": "C",
+      "title": "The Orbanisation of America: Hungary's lessons for Donald Trump",
+      "content": "The report The Orbanisation of America: Hungary's lessons for Donald Trump summarizes background and significance for media independence, judicial oversight, and executive authority in election-year politics.",
+      "truth": {
+        "label": "TRUE"
+      },
+      "ai": {
+        "label": "FAKE",
+        "probs": {
+          "FAKE": 0.9975885152816772,
+          "TRUE": 0.0024115340784192085
+        },
+        "correct": false,
+        "confidence": 0.9975885152816772,
+        "conf_bin": "high"
+      },
+      "xai": {
+        "target": "logit(P(FAKE))",
+        "title_segments": [
+          {
+            "text": "The ",
+            "shap": -0.004679646094640096
+          },
+          {
+            "text": "Orbanisation ",
+            "shap": -0.14544124688420976
+          },
+          {
+            "text": "of ",
+            "shap": -0.04848041562806992
+          },
+          {
+            "text": "America: ",
+            "shap": -0.09696083125613984
+          },
+          {
+            "text": "Hungary's ",
+            "shap": -0.062371527687424703
+          },
+          {
+            "text": "lessons ",
+            "shap": -0.013891112059354782
+          },
+          {
+            "text": "for ",
+            "shap": -0.013891112059354782
+          },
+          {
+            "text": "Donald ",
+            "shap": -0.013891112059354782
+          },
+          {
+            "text": "Trump",
+            "shap": -0.013891112059354782
+          }
+        ],
+        "content_segments": [
+          {
+            "text": "The ",
+            "shap": 0.056890840331713356
+          },
+          {
+            "text": "report ",
+            "shap": 0.056890840331713356
+          },
+          {
+            "text": "The ",
+            "shap": 0.056890840331713356
+          },
+          {
+            "text": "Orbanisation ",
+            "shap": 0.17067252099514008
+          },
+          {
+            "text": "of ",
+            "shap": -0.01389630401835722
+          },
+          {
+            "text": "America: ",
+            "shap": -0.02779260803671444
+          },
+          {
+            "text": "Hungary's ",
+            "shap": -0.02779260803671444
+          },
+          {
+            "text": "lessons ",
+            "shap": -0.01389630401835722
+          },
+          {
+            "text": "for ",
+            "shap": -0.01389630401835722
+          },
+          {
+            "text": "Donald ",
+            "shap": -0.01389630401835722
+          },
+          {
+            "text": "Trump ",
+            "shap": -0.013896304018357222
+          },
+          {
+            "text": "summarizes ",
+            "shap": -0.013896304018357222
+          },
+          {
+            "text": "background ",
+            "shap": -0.013896304018357222
+          },
+          {
+            "text": "and ",
+            "shap": -0.013896304018357222
+          },
+          {
+            "text": "significance ",
+            "shap": -0.013896304018357222
+          },
+          {
+            "text": "for ",
+            "shap": -0.013896304018357222
+          },
+          {
+            "text": "media ",
+            "shap": -0.013896304018357222
+          },
+          {
+            "text": "independence, ",
+            "shap": -0.027792608036714444
+          },
+          {
+            "text": "judicial ",
+            "shap": -0.010855253537495932
+          },
+          {
+            "text": "oversight, ",
+            "shap": -0.021710507074991864
+          },
+          {
+            "text": "and ",
+            "shap": -0.01085525353749593
+          },
+          {
+            "text": "executive ",
+            "shap": -0.01085525353749593
+          },
+          {
+            "text": "authority ",
+            "shap": -0.01085525353749593
+          },
+          {
+            "text": "in ",
+            "shap": -0.01085525353749593
+          },
+          {
+            "text": "election-year ",
+            "shap": -0.032565760612487796
+          },
+          {
+            "text": "politics.<",
+            "shap": -0.021710507074991864
+          }
+        ],
+        "base_value": 6.463751543005162
+      }
+    },
+    {
+      "id": "Ambrosio1994_real-and-fake-news_train_wl_news_whitelist_v11_selected_grouped.csv_6",
+      "source": "AFP Fact Check",
+      "topic": "HEALTH",
+      "group": "B",
+      "title": "Covid vaccines linked to study on rising cancer cases",
+      "content": "Online posts claimed covid vaccines linked to study on rising cancer cases. The claim spread through image cards, short clips, and copied captions in health groups. Users presented the material as evidence of a broader safety concern.",
+      "truth": {
+        "label": "FAKE"
+      },
+      "ai": {
+        "label": "TRUE",
+        "probs": {
+          "FAKE": 3.3151380193885416e-05,
+          "TRUE": 0.9999668598175049
+        },
+        "correct": false,
+        "confidence": 0.9999668598175049,
+        "conf_bin": "high"
+      },
+      "xai": {
+        "target": "logit(P(FAKE))",
+        "title_segments": [
+          {
+            "text": "Covid ",
+            "shap": -0.44643264412879946
+          },
+          {
+            "text": "vaccines ",
+            "shap": -0.694950021058321
+          },
+          {
+            "text": "linked ",
+            "shap": -0.694950021058321
+          },
+          {
+            "text": "to ",
+            "shap": -0.694950021058321
+          },
+          {
+            "text": "study ",
+            "shap": -0.694950021058321
+          },
+          {
+            "text": "on ",
+            "shap": -0.694950021058321
+          },
+          {
+            "text": "rising ",
+            "shap": -0.694950021058321
+          },
+          {
+            "text": "cancer ",
+            "shap": -0.694950021058321
+          },
+          {
+            "text": "cases",
+            "shap": -0.694950021058321
+          }
+        ],
+        "content_segments": [
+          {
+            "text": "Online ",
+            "shap": -0.12735080368378582
+          },
+          {
+            "text": "posts ",
+            "shap": -0.12735080368378582
+          },
+          {
+            "text": "claimed ",
+            "shap": -0.12735080368378582
+          },
+          {
+            "text": "covid ",
+            "shap": -0.25470160736757164
+          },
+          {
+            "text": "vaccines ",
+            "shap": -0.12735080368378585
+          },
+          {
+            "text": "linked ",
+            "shap": -0.12735080368378585
+          },
+          {
+            "text": "to ",
+            "shap": -0.12735080368378585
+          },
+          {
+            "text": "study ",
+            "shap": -0.12735080368378585
+          },
+          {
+            "text": "on ",
+            "shap": -0.12735080368378585
+          },
+          {
+            "text": "rising ",
+            "shap": -0.12735080368378585
+          },
+          {
+            "text": "cancer ",
+            "shap": -0.12735080368378585
+          },
+          {
+            "text": "cases. ",
+            "shap": -0.2547016073675717
+          },
+          {
+            "text": "The ",
+            "shap": -0.0004009538226657444
+          },
+          {
+            "text": "claim ",
+            "shap": -0.0004009538226657444
+          },
+          {
+            "text": "spread ",
+            "shap": -0.0004009538226657444
+          },
+          {
+            "text": "through ",
+            "shap": -0.0004009538226657444
+          },
+          {
+            "text": "image ",
+            "shap": -0.0004009538226657444
+          },
+          {
+            "text": "cards, ",
+            "shap": -0.0008019076453314888
+          },
+          {
+            "text": "short ",
+            "shap": -0.0004009538226657444
+          },
+          {
+            "text": "clips, ",
+            "shap": -0.0008019076453314888
+          },
+          {
+            "text": "and ",
+            "shap": -0.00040095382266574435
+          },
+          {
+            "text": "copied ",
+            "shap": -0.0004009538226657443
+          },
+          {
+            "text": "captions ",
+            "shap": -0.0008019076453314886
+          },
+          {
+            "text": "in ",
+            "shap": -0.0004009538226657443
+          },
+          {
+            "text": "health ",
+            "shap": -0.0004009538226657443
+          },
+          {
+            "text": "groups. ",
+            "shap": -0.0008019076453314887
+          },
+          {
+            "text": "Users ",
+            "shap": 0.006896694501241048
+          },
+          {
+            "text": "presented ",
+            "shap": 0.006896694501241048
+          },
+          {
+            "text": "the ",
+            "shap": 0.006896694501241048
+          },
+          {
+            "text": "material ",
+            "shap": 0.006896694501241048
+          },
+          {
+            "text": "as ",
+            "shap": 0.006896694501241048
+          },
+          {
+            "text": "evidence ",
+            "shap": 0.006896694501241048
+          },
+          {
+            "text": "of ",
+            "shap": 0.006896694501241048
+          },
+          {
+            "text": "a ",
+            "shap": 0.006896694501241048
+          },
+          {
+            "text": "broader ",
+            "shap": 0.006896694501241049
+          },
+          {
+            "text": "safety ",
+            "shap": 0.006896694501241049
+          },
+          {
+            "text": "concern.<",
+            "shap": 0.013793389002482098
+          }
+        ],
+        "base_value": -2.6009921564999194
+      }
+    },
+    {
+      "id": "Ambrosio1994_real-and-fake-news_train_wl_news_whitelist_v11_selected_grouped.csv_8",
+      "source": "Cancer News",
+      "topic": "HEALTH",
+      "group": "C",
+      "title": "NHS expands enrollment pathways for personalized cancer vaccine trials",
+      "content": "NHS programs in England said additional hospitals are opening referral routes for personalized cancer vaccine trials. Clinical teams described efforts to shorten eligibility screening and speed first appointments. Trial leads said long-term monitoring will focus on response durability and safety.",
+      "truth": {
+        "label": "TRUE"
+      },
+      "ai": {
+        "label": "TRUE",
+        "probs": {
+          "FAKE": 3.161904896842316e-05,
+          "TRUE": 0.999968409538269
+        },
+        "correct": true,
+        "confidence": 0.999968409538269,
+        "conf_bin": "high"
+      },
+      "xai": {
+        "target": "logit(P(FAKE))",
+        "title_segments": [
+          {
+            "text": "NHS ",
+            "shap": -0.42412037007948933
+          },
+          {
+            "text": "expands ",
+            "shap": -0.21206018503974466
+          },
+          {
+            "text": "enrollment ",
+            "shap": -0.21206018503974466
+          },
+          {
+            "text": "pathways ",
+            "shap": -0.21206018503974466
+          },
+          {
+            "text": "for ",
+            "shap": -0.21206018503974466
+          },
+          {
+            "text": "personalized ",
+            "shap": -0.21206018503974466
+          },
+          {
+            "text": "cancer ",
+            "shap": -0.21206018503974466
+          },
+          {
+            "text": "vaccine ",
+            "shap": -0.2120601850397447
+          },
+          {
+            "text": "trials",
+            "shap": -0.2120601850397447
+          }
+        ],
+        "content_segments": [
+          {
+            "text": "NHS ",
+            "shap": -0.8352747981746992
+          },
+          {
+            "text": "programs ",
+            "shap": -0.4176373990873496
+          },
+          {
+            "text": "in ",
+            "shap": -0.4176373990873496
+          },
+          {
+            "text": "England ",
+            "shap": -0.4176373990873496
+          },
+          {
+            "text": "said ",
+            "shap": -0.4176373990873496
+          },
+          {
+            "text": "additional ",
+            "shap": -0.4176373990873496
+          },
+          {
+            "text": "hospitals ",
+            "shap": -0.4176373990873496
+          },
+          {
+            "text": "are ",
+            "shap": -0.15120021800200142
+          },
+          {
+            "text": "opening ",
+            "shap": -0.15120021800200142
+          },
+          {
+            "text": "referral ",
+            "shap": -0.15120021800200142
+          },
+          {
+            "text": "routes ",
+            "shap": -0.15120021800200142
+          },
+          {
+            "text": "for ",
+            "shap": -0.15120021800200145
+          },
+          {
+            "text": "personalized ",
+            "shap": -0.15120021800200145
+          },
+          {
+            "text": "cancer ",
+            "shap": -0.15120021800200145
+          },
+          {
+            "text": "vaccine ",
+            "shap": -0.15120021800200145
+          },
+          {
+            "text": "trials. ",
+            "shap": -0.3024004360040029
+          },
+          {
+            "text": "Clinical ",
+            "shap": -0.01583395554469182
+          },
+          {
+            "text": "teams ",
+            "shap": -0.01583395554469182
+          },
+          {
+            "text": "described ",
+            "shap": -0.01583395554469182
+          },
+          {
+            "text": "efforts ",
+            "shap": -0.01583395554469182
+          },
+          {
+            "text": "to ",
+            "shap": -0.015833955544691823
+          },
+          {
+            "text": "shorten ",
+            "shap": -0.015833955544691823
+          },
+          {
+            "text": "eligibility ",
+            "shap": -0.015833955544691823
+          },
+          {
+            "text": "screening ",
+            "shap": -0.015833955544691823
+          },
+          {
+            "text": "and ",
+            "shap": -0.015833955544691823
+          },
+          {
+            "text": "speed ",
+            "shap": -0.01583395554469182
+          },
+          {
+            "text": "first ",
+            "shap": -0.01583395554469182
+          },
+          {
+            "text": "appointments. ",
+            "shap": -0.03166791108938364
+          },
+          {
+            "text": "Trial ",
+            "shap": -0.0021117528279622397
+          },
+          {
+            "text": "leads ",
+            "shap": -0.0021117528279622397
+          },
+          {
+            "text": "said ",
+            "shap": -0.0021117528279622397
+          },
+          {
+            "text": "long-term ",
+            "shap": -0.006335258483886719
+          },
+          {
+            "text": "monitoring ",
+            "shap": -0.0021117528279622397
+          },
+          {
+            "text": "will ",
+            "shap": -0.0021117528279622397
+          },
+          {
+            "text": "focus ",
+            "shap": -0.0021117528279622397
+          },
+          {
+            "text": "on ",
+            "shap": -0.0021117528279622397
+          },
+          {
+            "text": "response ",
+            "shap": -0.0021117528279622397
+          },
+          {
+            "text": "durability ",
+            "shap": -0.0021117528279622397
+          },
+          {
+            "text": "and ",
+            "shap": -0.0021117528279622397
+          },
+          {
+            "text": "safety.<",
+            "shap": -0.0042235056559244795
+          }
+        ],
+        "base_value": -3.1504982463696836
+      }
+    },
+    {
+      "id": "Ambrosio1994_real-and-fake-news_train_wl_news_whitelist_v11_selected_grouped.csv_1",
+      "source": "Center on Budget and Policy Priorities",
+      "topic": "POLITICS",
+      "group": "E",
+      "title": "Congress begins new budget talks as shutdown deadlines approach",
+      "content": "Congress returned to budget negotiations as agencies warned that unresolved appropriations could disrupt programs in the coming weeks. Lawmakers are debating temporary funding measures while committees push competing spending priorities. Staff briefings described the timeline as increasingly tight.",
+      "truth": {
+        "label": "TRUE"
+      },
+      "ai": {
+        "label": "TRUE",
+        "probs": {
+          "FAKE": 3.132106940029189e-05,
+          "TRUE": 0.9999686479568481
+        },
+        "correct": true,
+        "confidence": 0.9999686479568481,
+        "conf_bin": "high"
+      },
+      "xai": {
+        "target": "logit(P(FAKE))",
+        "title_segments": [
+          {
+            "text": "Congress ",
+            "shap": -0.1757090538740158
+          },
+          {
+            "text": "begins ",
+            "shap": -0.1757090538740158
+          },
+          {
+            "text": "new ",
+            "shap": -0.1757090538740158
+          },
+          {
+            "text": "budget ",
+            "shap": -0.1757090538740158
+          },
+          {
+            "text": "talks ",
+            "shap": -0.4242875576019287
+          },
+          {
+            "text": "as ",
+            "shap": -0.4242875576019287
+          },
+          {
+            "text": "shutdown ",
+            "shap": -0.4242875576019287
+          },
+          {
+            "text": "deadlines ",
+            "shap": -0.4242875576019287
+          },
+          {
+            "text": "approach",
+            "shap": -0.4242875576019287
+          }
+        ],
+        "content_segments": [
+          {
+            "text": "Congress ",
+            "shap": -0.18490825828753019
+          },
+          {
+            "text": "returned ",
+            "shap": -0.18490825828753019
+          },
+          {
+            "text": "to ",
+            "shap": -0.18490825828753019
+          },
+          {
+            "text": "budget ",
+            "shap": -0.18490825828753019
+          },
+          {
+            "text": "negotiations ",
+            "shap": -0.18490825828753019
+          },
+          {
+            "text": "as ",
+            "shap": -0.18490825828753019
+          },
+          {
+            "text": "agencies ",
+            "shap": -0.18490825828753019
+          },
+          {
+            "text": "warned ",
+            "shap": -0.18490825828753019
+          },
+          {
+            "text": "that ",
+            "shap": -0.18490825828753019
+          },
+          {
+            "text": "unresolved ",
+            "shap": -0.18490825828753019
+          },
+          {
+            "text": "appropriations ",
+            "shap": -0.18490825828753019
+          },
+          {
+            "text": "could ",
+            "shap": -0.18490825828753019
+          },
+          {
+            "text": "disrupt ",
+            "shap": -0.18490825828753016
+          },
+          {
+            "text": "programs ",
+            "shap": -0.18490825828753016
+          },
+          {
+            "text": "in ",
+            "shap": -0.18490825828753016
+          },
+          {
+            "text": "the ",
+            "shap": -0.18490825828753016
+          },
+          {
+            "text": "coming ",
+            "shap": -0.18490825828753019
+          },
+          {
+            "text": "weeks. ",
+            "shap": -0.36981651657506037
+          },
+          {
+            "text": "Lawmakers ",
+            "shap": -0.034653893538883755
+          },
+          {
+            "text": "are ",
+            "shap": -0.017326946769441878
+          },
+          {
+            "text": "debating ",
+            "shap": -0.017326946769441878
+          },
+          {
+            "text": "temporary ",
+            "shap": -0.017326946769441878
+          },
+          {
+            "text": "funding ",
+            "shap": -0.017326946769441878
+          },
+          {
+            "text": "measures ",
+            "shap": -0.017326946769441878
+          },
+          {
+            "text": "while ",
+            "shap": -0.017326946769441878
+          },
+          {
+            "text": "committees ",
+            "shap": -0.017326946769441874
+          },
+          {
+            "text": "push ",
+            "shap": -0.017326946769441874
+          },
+          {
+            "text": "competing ",
+            "shap": -0.017326946769441878
+          },
+          {
+            "text": "spending ",
+            "shap": -0.017326946769441878
+          },
+          {
+            "text": "priorities. ",
+            "shap": -0.034653893538883755
+          },
+          {
+            "text": "Staff ",
+            "shap": -0.011251096924146017
+          },
+          {
+            "text": "briefings ",
+            "shap": -0.011251096924146017
+          },
+          {
+            "text": "described ",
+            "shap": -0.011251096924146017
+          },
+          {
+            "text": "the ",
+            "shap": -0.011251096924146017
+          },
+          {
+            "text": "timeline ",
+            "shap": -0.011251096924146017
+          },
+          {
+            "text": "as ",
+            "shap": -0.011251096924146017
+          },
+          {
+            "text": "increasingly ",
+            "shap": -0.011251096924146017
+          },
+          {
+            "text": "tight.<",
+            "shap": -0.022502193848292034
+          }
+        ],
+        "base_value": -3.6898201834803306
+      }
+    },
+    {
+      "id": "Ambrosio1994_real-and-fake-news_train_wl_news_whitelist_v11_selected_grouped.csv_12",
+      "source": "AFP Fact Check",
+      "topic": "SCI_TECH",
+      "group": "C",
+      "title": "Hurricane Helene 'geoengineered' to expand lithium mining",
+      "content": "A viral claim said Hurricane Helene was geoengineered to expand lithium mining. The story spread through reposted graphics, edited weather clips, and commentary threads. Accounts framed the claim as evidence of deliberate intervention.",
+      "truth": {
+        "label": "FAKE"
+      },
+      "ai": {
+        "label": "TRUE",
+        "probs": {
+          "FAKE": 0.0006210354622453451,
+          "TRUE": 0.9993789196014404
+        },
+        "correct": false,
+        "confidence": 0.9993789196014404,
+        "conf_bin": "high"
+      },
+      "xai": {
+        "target": "logit(P(FAKE))",
+        "title_segments": [
+          {
+            "text": "Hurricane ",
+            "shap": 0.00974689589606391
+          },
+          {
+            "text": "Helene ",
+            "shap": 0.00974689589606391
+          },
+          {
+            "text": "'geoengineered' ",
+            "shap": -0.7377755754014366
+          },
+          {
+            "text": "to ",
+            "shap": -0.1485298046698937
+          },
+          {
+            "text": "expand ",
+            "shap": -0.1485298046698937
+          },
+          {
+            "text": "lithium ",
+            "shap": -0.1485298046698937
+          },
+          {
+            "text": "mining",
+            "shap": -0.1485298046698937
+          }
+        ],
+        "content_segments": [
+          {
+            "text": "A ",
+            "shap": -0.1485298046698937
+          },
+          {
+            "text": "viral ",
+            "shap": -0.16667055760820707
+          },
+          {
+            "text": "claim ",
+            "shap": -0.16667055760820707
+          },
+          {
+            "text": "said ",
+            "shap": -0.16667055760820707
+          },
+          {
+            "text": "Hurricane ",
+            "shap": -0.16667055760820707
+          },
+          {
+            "text": "Helene ",
+            "shap": -0.33334111521641413
+          },
+          {
+            "text": "was ",
+            "shap": -0.16667055760820707
+          },
+          {
+            "text": "geoengineered ",
+            "shap": -0.5000116728246212
+          },
+          {
+            "text": "to ",
+            "shap": -0.09285658051570257
+          },
+          {
+            "text": "expand ",
+            "shap": -0.09285658051570257
+          },
+          {
+            "text": "lithium ",
+            "shap": -0.09285658051570257
+          },
+          {
+            "text": "mining. ",
+            "shap": -0.18571316103140514
+          },
+          {
+            "text": "The ",
+            "shap": -0.20526596377877626
+          },
+          {
+            "text": "story ",
+            "shap": -0.20526596377877626
+          },
+          {
+            "text": "spread ",
+            "shap": -0.20526596377877626
+          },
+          {
+            "text": "through ",
+            "shap": -0.20526596377877626
+          },
+          {
+            "text": "reposted ",
+            "shap": -0.6157978913363289
+          },
+          {
+            "text": "graphics, ",
+            "shap": -0.4105319275575526
+          },
+          {
+            "text": "edited ",
+            "shap": -0.2052659637787763
+          },
+          {
+            "text": "weather ",
+            "shap": -0.2052659637787763
+          },
+          {
+            "text": "clips, ",
+            "shap": -0.4105319275575526
+          },
+          {
+            "text": "and ",
+            "shap": -0.2052659637787763
+          },
+          {
+            "text": "commentary ",
+            "shap": -0.2052659637787763
+          },
+          {
+            "text": "threads. ",
+            "shap": -0.4105319275575526
+          },
+          {
+            "text": "Accounts ",
+            "shap": 0.008818323795612041
+          },
+          {
+            "text": "framed ",
+            "shap": 0.008818323795612041
+          },
+          {
+            "text": "the ",
+            "shap": 0.008818323795612041
+          },
+          {
+            "text": "claim ",
+            "shap": 0.008818323795612041
+          },
+          {
+            "text": "as ",
+            "shap": 0.008818323795612041
+          },
+          {
+            "text": "evidence ",
+            "shap": 0.008818323795612041
+          },
+          {
+            "text": "of ",
+            "shap": 0.008818323795612041
+          },
+          {
+            "text": "deliberate ",
+            "shap": 0.008818323795612041
+          },
+          {
+            "text": "intervention.<",
+            "shap": 0.017636647591224082
+          }
+        ],
+        "base_value": -0.39024371230917687
+      }
+    },
+    {
+      "id": "Ambrosio1994_real-and-fake-news_train_wl_news_whitelist_v11_selected_grouped.csv_7",
+      "source": "University of Bristol",
+      "topic": "HEALTH",
+      "group": "D",
+      "title": "August: COVID-19 and mental illnesses",
+      "content": "Recent coverage of 'August: COVID-19 and mental illnesses' says post-pandemic stress patterns remain elevated across multiple groups. The report links care disruption, isolation, and financial pressure to ongoing mental-health burden. Public-health services are adapting support models in response.",
+      "truth": {
+        "label": "TRUE"
+      },
+      "ai": {
+        "label": "FAKE",
+        "probs": {
+          "FAKE": 0.9146592617034912,
+          "TRUE": 0.08534074574708939
+        },
+        "correct": false,
+        "confidence": 0.9146592617034912,
+        "conf_bin": "high"
+      },
+      "xai": {
+        "target": "logit(P(FAKE))",
+        "title_segments": [
+          {
+            "text": "August: ",
+            "shap": 0.02984814274196441
+          },
+          {
+            "text": "COVID-19 ",
+            "shap": 0.05969628548392882
+          },
+          {
+            "text": "and ",
+            "shap": 0.014924071370982207
+          },
+          {
+            "text": "mental ",
+            "shap": 0.014924071370982206
+          },
+          {
+            "text": "illnesses",
+            "shap": 0.014924071370982206
+          }
+        ],
+        "content_segments": [
+          {
+            "text": "Recent ",
+            "shap": 0.014924071370982207
+          },
+          {
+            "text": "coverage ",
+            "shap": 0.014924071370982207
+          },
+          {
+            "text": "of ",
+            "shap": 0.014924071370982206
+          },
+          {
+            "text": "'August: ",
+            "shap": 0.044772214112946615
+          },
+          {
+            "text": "COVID-19 ",
+            "shap": 0.05969628548392882
+          },
+          {
+            "text": "and ",
+            "shap": -0.04713557059359219
+          },
+          {
+            "text": "mental ",
+            "shap": -0.04713557059359219
+          },
+          {
+            "text": "illnesses' ",
+            "shap": -0.09427114118718438
+          },
+          {
+            "text": "says ",
+            "shap": -0.04713557059359219
+          },
+          {
+            "text": "post-pandemic ",
+            "shap": -0.23567785296796095
+          },
+          {
+            "text": "stress ",
+            "shap": -0.12732070388220665
+          },
+          {
+            "text": "patterns ",
+            "shap": -0.12732070388220665
+          },
+          {
+            "text": "remain ",
+            "shap": -0.12732070388220665
+          },
+          {
+            "text": "elevated ",
+            "shap": -0.12732070388220665
+          },
+          {
+            "text": "across ",
+            "shap": -0.12732070388220665
+          },
+          {
+            "text": "multiple ",
+            "shap": -0.12732070388220665
+          },
+          {
+            "text": "groups. ",
+            "shap": -0.2546414077644133
+          },
+          {
+            "text": "The ",
+            "shap": -0.05278381456931432
+          },
+          {
+            "text": "report ",
+            "shap": -0.05278381456931432
+          },
+          {
+            "text": "links ",
+            "shap": -0.05278381456931432
+          },
+          {
+            "text": "care ",
+            "shap": -0.05278381456931432
+          },
+          {
+            "text": "disruption, ",
+            "shap": -0.10556762913862865
+          },
+          {
+            "text": "isolation, ",
+            "shap": -0.10556762913862865
+          },
+          {
+            "text": "and ",
+            "shap": -0.05278381456931432
+          },
+          {
+            "text": "financial ",
+            "shap": -0.05278381456931432
+          },
+          {
+            "text": "pressure ",
+            "shap": -0.05278381456931432
+          },
+          {
+            "text": "to ",
+            "shap": -0.05278381456931432
+          },
+          {
+            "text": "ongoing ",
+            "shap": -0.05278381456931432
+          },
+          {
+            "text": "mental-health ",
+            "shap": -0.15835144370794296
+          },
+          {
+            "text": "burden. ",
+            "shap": -0.10556762913862865
+          },
+          {
+            "text": "Public-health ",
+            "shap": -0.11543124381984982
+          },
+          {
+            "text": "services ",
+            "shap": -0.038477081273283274
+          },
+          {
+            "text": "are ",
+            "shap": -0.038477081273283274
+          },
+          {
+            "text": "adapting ",
+            "shap": -0.038477081273283274
+          },
+          {
+            "text": "support ",
+            "shap": -0.038477081273283274
+          },
+          {
+            "text": "models ",
+            "shap": -0.038477081273283274
+          },
+          {
+            "text": "in ",
+            "shap": -0.038477081273283274
+          },
+          {
+            "text": "response.<",
+            "shap": -0.07695416254656655
+          }
+        ],
+        "base_value": 4.951620212579592
+      }
+    },
+    {
+      "id": "Ambrosio1994_real-and-fake-news_train_wl_news_whitelist_v11_selected_grouped.csv_21",
+      "source": "Snopes",
+      "topic": "SOCIETY",
+      "group": "A",
+      "title": "Blue-Ringed Octopus Venom Can Kill 26 Adults",
+      "content": "Blue-ringed octopuses carry tetrodotoxin, a powerful neurotoxin. Experts say one bite may contain enough venom to kill 26 adults within minutes. There is no specific antivenom, but rapid medical care can help victims survive.",
+      "truth": {
+        "label": "TRUE"
+      },
+      "ai": {
+        "label": "FAKE",
+        "probs": {
+          "FAKE": 0.9999804496765137,
+          "TRUE": 1.953674291144125e-05
+        },
+        "correct": false,
+        "confidence": 0.9999804496765137,
+        "conf_bin": "high"
+      },
+      "xai": {
+        "target": "logit(P(FAKE))",
+        "title_segments": [
+          {
+            "text": "Blue-Ringed ",
+            "shap": 0.2729923047802665
+          },
+          {
+            "text": "Octopus ",
+            "shap": 0.20588605976724006
+          },
+          {
+            "text": "Venom ",
+            "shap": 0.10294302988362003
+          },
+          {
+            "text": "Can ",
+            "shap": 0.10294302988362003
+          },
+          {
+            "text": "Kill ",
+            "shap": 0.10294302988362003
+          },
+          {
+            "text": "26 ",
+            "shap": 0.10294302988362003
+          },
+          {
+            "text": "Adults",
+            "shap": 0.10294302988362003
+          }
+        ],
+        "content_segments": [
+          {
+            "text": "Blue-ringed ",
+            "shap": 0.41177211953448006
+          },
+          {
+            "text": "octopuses ",
+            "shap": -0.08447234119687762
+          },
+          {
+            "text": "carry ",
+            "shap": -0.02815744706562587
+          },
+          {
+            "text": "tetrodotoxin, ",
+            "shap": -0.14078723532812934
+          },
+          {
+            "text": "a ",
+            "shap": -0.028157447065625875
+          },
+          {
+            "text": "powerful ",
+            "shap": -0.028157447065625875
+          },
+          {
+            "text": "neurotoxin. ",
+            "shap": -0.08447234119687763
+          },
+          {
+            "text": "Experts ",
+            "shap": -0.0005534172058105468
+          },
+          {
+            "text": "say ",
+            "shap": -0.0005534172058105468
+          },
+          {
+            "text": "one ",
+            "shap": -0.0005534172058105468
+          },
+          {
+            "text": "bite ",
+            "shap": -0.0005534172058105468
+          },
+          {
+            "text": "may ",
+            "shap": -0.0005534172058105468
+          },
+          {
+            "text": "contain ",
+            "shap": -0.0005534172058105468
+          },
+          {
+            "text": "enough ",
+            "shap": -0.0005534172058105468
+          },
+          {
+            "text": "venom ",
+            "shap": -0.0005534172058105468
+          },
+          {
+            "text": "to ",
+            "shap": -0.0005534172058105468
+          },
+          {
+            "text": "kill ",
+            "shap": -0.0005534172058105468
+          },
+          {
+            "text": "26 ",
+            "shap": -0.0005534172058105468
+          },
+          {
+            "text": "adults ",
+            "shap": -0.0005534172058105468
+          },
+          {
+            "text": "within ",
+            "shap": -0.0005534172058105468
+          },
+          {
+            "text": "minutes. ",
+            "shap": -0.0011068344116210937
+          },
+          {
+            "text": "There ",
+            "shap": 0.00791945457458496
+          },
+          {
+            "text": "is ",
+            "shap": 0.00791945457458496
+          },
+          {
+            "text": "no ",
+            "shap": 0.00791945457458496
+          },
+          {
+            "text": "specific ",
+            "shap": 0.00791945457458496
+          },
+          {
+            "text": "antivenom, ",
+            "shap": 0.03167781829833984
+          },
+          {
+            "text": "but ",
+            "shap": 0.00791945457458496
+          },
+          {
+            "text": "rapid ",
+            "shap": 0.00791945457458496
+          },
+          {
+            "text": "medical ",
+            "shap": 0.00791945457458496
+          },
+          {
+            "text": "care ",
+            "shap": 0.00791945457458496
+          },
+          {
+            "text": "can ",
+            "shap": 0.00791945457458496
+          },
+          {
+            "text": "help ",
+            "shap": 0.00791945457458496
+          },
+          {
+            "text": "victims ",
+            "shap": 0.00791945457458496
+          },
+          {
+            "text": "survive.<",
+            "shap": 0.01583890914916992
+          }
+        ],
+        "base_value": 9.705008330277838
+      }
+    },
+    {
+      "id": "Ambrosio1994_real-and-fake-news_train_wl_news_whitelist_v11_selected_grouped.csv_22",
+      "source": "AFP Fact Check",
+      "topic": "SOCIETY",
+      "group": "C",
+      "title": "Viral posts claim eclipse image behind CN Tower was real",
+      "content": "Posts online claimed a widely shared eclipse image behind Toronto's CN Tower showed the real 2024 eclipse. Users circulated the image with short captions presenting it as a view from Toronto. The claim spread quickly during eclipse-related discussions.",
+      "truth": {
+        "label": "FAKE"
+      },
+      "ai": {
+        "label": "TRUE",
+        "probs": {
+          "FAKE": 0.00011756968160625547,
+          "TRUE": 0.9998824596405029
+        },
+        "correct": false,
+        "confidence": 0.9998824596405029,
+        "conf_bin": "high"
+      },
+      "xai": {
+        "target": "logit(P(FAKE))",
+        "title_segments": [
+          {
+            "text": "Viral ",
+            "shap": -0.3162882775068283
+          },
+          {
+            "text": "posts ",
+            "shap": -0.15814413875341415
+          },
+          {
+            "text": "claim ",
+            "shap": -0.15814413875341415
+          },
+          {
+            "text": "eclipse ",
+            "shap": -0.17152997106313705
+          },
+          {
+            "text": "image ",
+            "shap": -0.17152997106313705
+          },
+          {
+            "text": "behind ",
+            "shap": -0.17152997106313705
+          },
+          {
+            "text": "CN ",
+            "shap": -0.17152997106313705
+          },
+          {
+            "text": "Tower ",
+            "shap": -0.17152997106313705
+          },
+          {
+            "text": "was ",
+            "shap": -0.17152997106313705
+          },
+          {
+            "text": "real",
+            "shap": -0.17152997106313705
+          }
+        ],
+        "content_segments": [
+          {
+            "text": "Posts ",
+            "shap": -0.0889609314146496
+          },
+          {
+            "text": "online ",
+            "shap": -0.0889609314146496
+          },
+          {
+            "text": "claimed ",
+            "shap": -0.0889609314146496
+          },
+          {
+            "text": "a ",
+            "shap": -0.0889609314146496
+          },
+          {
+            "text": "widely ",
+            "shap": -0.0889609314146496
+          },
+          {
+            "text": "shared ",
+            "shap": -0.0889609314146496
+          },
+          {
+            "text": "eclipse ",
+            "shap": -0.08896093141464959
+          },
+          {
+            "text": "image ",
+            "shap": -0.08896093141464959
+          },
+          {
+            "text": "behind ",
+            "shap": -0.08896093141464959
+          },
+          {
+            "text": "Toronto's ",
+            "shap": -0.17792186282929917
+          },
+          {
+            "text": "CN ",
+            "shap": -0.08896093141464959
+          },
+          {
+            "text": "Tower ",
+            "shap": -0.08896093141464959
+          },
+          {
+            "text": "showed ",
+            "shap": -0.08896093141464959
+          },
+          {
+            "text": "the ",
+            "shap": -0.0889609314146496
+          },
+          {
+            "text": "real ",
+            "shap": -0.0889609314146496
+          },
+          {
+            "text": "2024 ",
+            "shap": -0.0889609314146496
+          },
+          {
+            "text": "eclipse. ",
+            "shap": -0.1779218628292992
+          },
+          {
+            "text": "Users ",
+            "shap": -0.17447537183761597
+          },
+          {
+            "text": "circulated ",
+            "shap": -0.17447537183761597
+          },
+          {
+            "text": "the ",
+            "shap": -0.17447537183761597
+          },
+          {
+            "text": "image ",
+            "shap": -0.17447537183761597
+          },
+          {
+            "text": "with ",
+            "shap": -0.17447537183761597
+          },
+          {
+            "text": "short ",
+            "shap": -0.17447537183761597
+          },
+          {
+            "text": "captions ",
+            "shap": -0.34895074367523193
+          },
+          {
+            "text": "presenting ",
+            "shap": -0.1224384605884552
+          },
+          {
+            "text": "it ",
+            "shap": -0.1224384605884552
+          },
+          {
+            "text": "as ",
+            "shap": -0.1224384605884552
+          },
+          {
+            "text": "a ",
+            "shap": -0.1224384605884552
+          },
+          {
+            "text": "view ",
+            "shap": -0.1224384605884552
+          },
+          {
+            "text": "from ",
+            "shap": -0.1224384605884552
+          },
+          {
+            "text": "Toronto. ",
+            "shap": -0.2448769211769104
+          },
+          {
+            "text": "The ",
+            "shap": -0.09730866322150597
+          },
+          {
+            "text": "claim ",
+            "shap": -0.09730866322150597
+          },
+          {
+            "text": "spread ",
+            "shap": -0.09730866322150597
+          },
+          {
+            "text": "quickly ",
+            "shap": -0.09730866322150597
+          },
+          {
+            "text": "during ",
+            "shap": -0.09730866322150597
+          },
+          {
+            "text": "eclipse-related ",
+            "shap": -0.2919259896645179
+          },
+          {
+            "text": "discussions.<",
+            "shap": -0.19461732644301194
+          }
+        ],
+        "base_value": -2.176420447657888
+      }
+    },
+    {
+      "id": "Ambrosio1994_real-and-fake-news_train_wl_news_whitelist_v11_selected_grouped.csv_17",
+      "source": "Nature",
+      "topic": "BUSINESS",
+      "group": "D",
+      "title": "Saudi labor-market study analyzes links between inflation, oil prices, trade, and unemployment",
+      "content": "A new empirical study analyzed how inflation, oil prices, trade openness, and foreign investment relate to unemployment trends in Saudi Arabia. The authors reported interactions across multiple macroeconomic channels rather than a single driver. Economists said the findings add evidence for policy trade-off modeling.",
+      "truth": {
+        "label": "TRUE"
+      },
+      "ai": {
+        "label": "TRUE",
+        "probs": {
+          "FAKE": 6.249098805710673e-05,
+          "TRUE": 0.9999375343322754
+        },
+        "correct": true,
+        "confidence": 0.9999375343322754,
+        "conf_bin": "high"
+      },
+      "xai": {
+        "target": "logit(P(FAKE))",
+        "title_segments": [
+          {
+            "text": "Saudi ",
+            "shap": -0.3698727769156297
+          },
+          {
+            "text": "labor-market ",
+            "shap": -1.1096183307468892
+          },
+          {
+            "text": "study ",
+            "shap": -0.36987277691562975
+          },
+          {
+            "text": "analyzes ",
+            "shap": -0.7397455538312594
+          },
+          {
+            "text": "links ",
+            "shap": -0.36987277691562975
+          },
+          {
+            "text": "between ",
+            "shap": -0.36987277691562975
+          },
+          {
+            "text": "inflation, ",
+            "shap": -0.7397455538312595
+          },
+          {
+            "text": "oil ",
+            "shap": -0.20594789907336233
+          },
+          {
+            "text": "prices, ",
+            "shap": -0.41189579814672467
+          },
+          {
+            "text": "trade, ",
+            "shap": -0.4118957981467247
+          },
+          {
+            "text": "and ",
+            "shap": -0.03799270788828532
+          },
+          {
+            "text": "unemployment",
+            "shap": -0.03799270788828532
+          }
+        ],
+        "content_segments": [
+          {
+            "text": "A ",
+            "shap": -0.03799270788828532
+          },
+          {
+            "text": "new ",
+            "shap": -0.03799270788828532
+          },
+          {
+            "text": "empirical ",
+            "shap": -0.03799270788828532
+          },
+          {
+            "text": "study ",
+            "shap": -0.03799270788828532
+          },
+          {
+            "text": "analyzed ",
+            "shap": -0.03799270788828532
+          },
+          {
+            "text": "how ",
+            "shap": -0.03799270788828532
+          },
+          {
+            "text": "inflation, ",
+            "shap": -0.07598541577657064
+          },
+          {
+            "text": "oil ",
+            "shap": -0.037992707888285314
+          },
+          {
+            "text": "prices, ",
+            "shap": -0.07598541577657063
+          },
+          {
+            "text": "trade ",
+            "shap": -0.037992707888285314
+          },
+          {
+            "text": "openness, ",
+            "shap": -0.07598541577657063
+          },
+          {
+            "text": "and ",
+            "shap": -0.037992707888285314
+          },
+          {
+            "text": "foreign ",
+            "shap": -0.037992707888285314
+          },
+          {
+            "text": "investment ",
+            "shap": -0.037992707888285314
+          },
+          {
+            "text": "relate ",
+            "shap": -0.037992707888285314
+          },
+          {
+            "text": "to ",
+            "shap": -0.037992707888285314
+          },
+          {
+            "text": "unemployment ",
+            "shap": -0.03799270788828532
+          },
+          {
+            "text": "trends ",
+            "shap": -0.03799270788828532
+          },
+          {
+            "text": "in ",
+            "shap": -0.03799270788828532
+          },
+          {
+            "text": "Saudi ",
+            "shap": -0.03799270788828532
+          },
+          {
+            "text": "Arabia. ",
+            "shap": -0.07598541577657064
+          },
+          {
+            "text": "The ",
+            "shap": -0.01335600217183431
+          },
+          {
+            "text": "authors ",
+            "shap": -0.01335600217183431
+          },
+          {
+            "text": "reported ",
+            "shap": -0.01335600217183431
+          },
+          {
+            "text": "interactions ",
+            "shap": -0.01335600217183431
+          },
+          {
+            "text": "across ",
+            "shap": -0.01335600217183431
+          },
+          {
+            "text": "multiple ",
+            "shap": -0.01335600217183431
+          },
+          {
+            "text": "macroeconomic ",
+            "shap": -0.02671200434366862
+          },
+          {
+            "text": "channels ",
+            "shap": -0.013356002171834311
+          },
+          {
+            "text": "rather ",
+            "shap": -0.013356002171834311
+          },
+          {
+            "text": "than ",
+            "shap": -0.013356002171834311
+          },
+          {
+            "text": "a ",
+            "shap": -0.013356002171834311
+          },
+          {
+            "text": "single ",
+            "shap": -0.01335600217183431
+          },
+          {
+            "text": "driver. ",
+            "shap": -0.02671200434366862
+          },
+          {
+            "text": "Economists ",
+            "shap": -0.06092356233035817
+          },
+          {
+            "text": "said ",
+            "shap": -0.030461781165179086
+          },
+          {
+            "text": "the ",
+            "shap": -0.030461781165179086
+          },
+          {
+            "text": "findings ",
+            "shap": -0.030461781165179086
+          },
+          {
+            "text": "add ",
+            "shap": -0.030461781165179086
+          },
+          {
+            "text": "evidence ",
+            "shap": -0.030461781165179086
+          },
+          {
+            "text": "for ",
+            "shap": -0.030461781165179086
+          },
+          {
+            "text": "policy ",
+            "shap": -0.030461781165179082
+          },
+          {
+            "text": "trade-off ",
+            "shap": -0.09138534349553724
+          },
+          {
+            "text": "modeling.<",
+            "shap": -0.06092356233035816
+          }
+        ],
+        "base_value": -2.9294775864515863
+      }
+    },
+    {
+      "id": "Ambrosio1994_real-and-fake-news_train_wl_news_whitelist_v11_selected_grouped.csv_3",
+      "source": "Snopes",
+      "topic": "POLITICS",
+      "group": "D",
+      "title": "Viral post claims a Facebook copyright disclaimer blocks photo use",
+      "content": "Posts on social platforms claimed that posting This Notice on Your Facebook Account Will Stop Platform from Using Your Photos. The message spread through screenshot threads and copied legal text presented as immediate account protection.",
+      "truth": {
+        "label": "FAKE"
+      },
+      "ai": {
+        "label": "FAKE",
+        "probs": {
+          "FAKE": 0.9998781681060791,
+          "TRUE": 0.0001218183824676089
+        },
+        "correct": true,
+        "confidence": 0.9998781681060791,
+        "conf_bin": "high"
+      },
+      "xai": {
+        "target": "logit(P(FAKE))",
+        "title_segments": [
+          {
+            "text": "Viral ",
+            "shap": -0.22650080919265747
+          },
+          {
+            "text": "post ",
+            "shap": -0.11325040459632874
+          },
+          {
+            "text": "claims ",
+            "shap": -0.11325040459632874
+          },
+          {
+            "text": "a ",
+            "shap": -0.13058114051818848
+          },
+          {
+            "text": "Facebook ",
+            "shap": -0.13058114051818848
+          },
+          {
+            "text": "copyright ",
+            "shap": -0.13058114051818848
+          },
+          {
+            "text": "disclaimer ",
+            "shap": -0.13058114051818848
+          },
+          {
+            "text": "blocks ",
+            "shap": -0.13058114051818848
+          },
+          {
+            "text": "photo ",
+            "shap": -0.13058114051818848
+          },
+          {
+            "text": "use",
+            "shap": -0.13058114051818848
+          }
+        ],
+        "content_segments": [
+          {
+            "text": "Posts ",
+            "shap": 0.021264627899812615
+          },
+          {
+            "text": "on ",
+            "shap": 0.021264627899812615
+          },
+          {
+            "text": "social ",
+            "shap": 0.021264627899812615
+          },
+          {
+            "text": "platforms ",
+            "shap": 0.021264627899812615
+          },
+          {
+            "text": "claimed ",
+            "shap": 0.021264627899812615
+          },
+          {
+            "text": "that ",
+            "shap": 0.021264627899812615
+          },
+          {
+            "text": "posting ",
+            "shap": 0.19450932326524153
+          },
+          {
+            "text": "This ",
+            "shap": 0.19450932326524153
+          },
+          {
+            "text": "Notice ",
+            "shap": 0.19450932326524153
+          },
+          {
+            "text": "on ",
+            "shap": 0.19450932326524153
+          },
+          {
+            "text": "Your ",
+            "shap": 0.19450932326524153
+          },
+          {
+            "text": "Facebook ",
+            "shap": 0.19450932326524153
+          },
+          {
+            "text": "Account ",
+            "shap": 0.19450932326524153
+          },
+          {
+            "text": "Will ",
+            "shap": 0.19450932326524153
+          },
+          {
+            "text": "Stop ",
+            "shap": 0.1945093232652415
+          },
+          {
+            "text": "Platform ",
+            "shap": 0.1945093232652415
+          },
+          {
+            "text": "from ",
+            "shap": 0.1945093232652415
+          },
+          {
+            "text": "Using ",
+            "shap": 0.1945093232652415
+          },
+          {
+            "text": "Your ",
+            "shap": 0.1945093232652415
+          },
+          {
+            "text": "Photos. ",
+            "shap": 0.389018646530483
+          },
+          {
+            "text": "The ",
+            "shap": -0.004891140120370048
+          },
+          {
+            "text": "message ",
+            "shap": -0.004891140120370048
+          },
+          {
+            "text": "spread ",
+            "shap": -0.004891140120370048
+          },
+          {
+            "text": "through ",
+            "shap": -0.004891140120370048
+          },
+          {
+            "text": "screenshot ",
+            "shap": -0.004891140120370048
+          },
+          {
+            "text": "threads ",
+            "shap": -0.004891140120370048
+          },
+          {
+            "text": "and ",
+            "shap": -0.004891140120370048
+          },
+          {
+            "text": "copied ",
+            "shap": -0.013862023750940958
+          },
+          {
+            "text": "legal ",
+            "shap": -0.013862023750940958
+          },
+          {
+            "text": "text ",
+            "shap": -0.013862023750940958
+          },
+          {
+            "text": "presented ",
+            "shap": -0.013862023750940958
+          },
+          {
+            "text": "as ",
+            "shap": -0.013862023750940958
+          },
+          {
+            "text": "immediate ",
+            "shap": -0.013862023750940958
+          },
+          {
+            "text": "account ",
+            "shap": -0.013862023750940958
+          },
+          {
+            "text": "protection.<",
+            "shap": -0.027724047501881916
+          }
+        ],
+        "base_value": 7.493584723035258
+      }
+    },
+    {
+      "id": "Ambrosio1994_real-and-fake-news_train_wl_news_whitelist_v11_selected_grouped.csv_11",
+      "source": "cio.com",
+      "topic": "SCI_TECH",
+      "group": "E",
+      "title": "NASA appoints its first chief AI officer",
+      "content": "NASA announced its first chief AI officer to oversee cross-program standards for machine-learning deployment. Officials said the post will coordinate governance, safety review, and implementation priorities across missions. The agency described the role as part of a broader modernization strategy.",
+      "truth": {
+        "label": "TRUE"
+      },
+      "ai": {
+        "label": "TRUE",
+        "probs": {
+          "FAKE": 3.568516331142746e-05,
+          "TRUE": 0.9999643564224243
+        },
+        "correct": true,
+        "confidence": 0.9999643564224243,
+        "conf_bin": "high"
+      },
+      "xai": {
+        "target": "logit(P(FAKE))",
+        "title_segments": [
+          {
+            "text": "NASA ",
+            "shap": -0.19514373468828725
+          },
+          {
+            "text": "appoints ",
+            "shap": -0.3902874693765745
+          },
+          {
+            "text": "its ",
+            "shap": -0.19514373468828725
+          },
+          {
+            "text": "first ",
+            "shap": -0.19514373468828725
+          },
+          {
+            "text": "chief ",
+            "shap": -0.19514373468828725
+          },
+          {
+            "text": "AI ",
+            "shap": -0.19514373468828725
+          },
+          {
+            "text": "officer",
+            "shap": -0.19514373468828725
+          }
+        ],
+        "content_segments": [
+          {
+            "text": "NASA ",
+            "shap": -0.2133313295032297
+          },
+          {
+            "text": "announced ",
+            "shap": -0.2133313295032297
+          },
+          {
+            "text": "its ",
+            "shap": -0.2133313295032297
+          },
+          {
+            "text": "first ",
+            "shap": -0.2133313295032297
+          },
+          {
+            "text": "chief ",
+            "shap": -0.2133313295032297
+          },
+          {
+            "text": "AI ",
+            "shap": -0.2133313295032297
+          },
+          {
+            "text": "officer ",
+            "shap": -0.34238910245207643
+          },
+          {
+            "text": "to ",
+            "shap": -0.34238910245207643
+          },
+          {
+            "text": "oversee ",
+            "shap": -0.34238910245207643
+          },
+          {
+            "text": "cross-program ",
+            "shap": -1.0271673073562293
+          },
+          {
+            "text": "standards ",
+            "shap": -0.34238910245207643
+          },
+          {
+            "text": "for ",
+            "shap": -0.34238910245207643
+          },
+          {
+            "text": "machine-learning ",
+            "shap": -0.41989025748693026
+          },
+          {
+            "text": "deployment. ",
+            "shap": -0.2799268383246202
+          },
+          {
+            "text": "Officials ",
+            "shap": -0.040441839133991915
+          },
+          {
+            "text": "said ",
+            "shap": -0.040441839133991915
+          },
+          {
+            "text": "the ",
+            "shap": -0.040441839133991915
+          },
+          {
+            "text": "post ",
+            "shap": -0.040441839133991915
+          },
+          {
+            "text": "will ",
+            "shap": -0.040441839133991915
+          },
+          {
+            "text": "coordinate ",
+            "shap": -0.040441839133991915
+          },
+          {
+            "text": "governance, ",
+            "shap": -0.08088367826798383
+          },
+          {
+            "text": "safety ",
+            "shap": -0.040441839133991915
+          },
+          {
+            "text": "review, ",
+            "shap": -0.08088367826798383
+          },
+          {
+            "text": "and ",
+            "shap": -0.040441839133991915
+          },
+          {
+            "text": "implementation ",
+            "shap": -0.040441839133991915
+          },
+          {
+            "text": "priorities ",
+            "shap": -0.040441839133991915
+          },
+          {
+            "text": "across ",
+            "shap": -0.040441839133991915
+          },
+          {
+            "text": "missions. ",
+            "shap": -0.08088367826798383
+          },
+          {
+            "text": "The ",
+            "shap": -0.01633908972144127
+          },
+          {
+            "text": "agency ",
+            "shap": -0.01633908972144127
+          },
+          {
+            "text": "described ",
+            "shap": -0.01633908972144127
+          },
+          {
+            "text": "the ",
+            "shap": -0.01633908972144127
+          },
+          {
+            "text": "role ",
+            "shap": -0.01633908972144127
+          },
+          {
+            "text": "as ",
+            "shap": -0.01633908972144127
+          },
+          {
+            "text": "part ",
+            "shap": -0.01633908972144127
+          },
+          {
+            "text": "of ",
+            "shap": -0.01633908972144127
+          },
+          {
+            "text": "a ",
+            "shap": -0.01633908972144127
+          },
+          {
+            "text": "broader ",
+            "shap": -0.01633908972144127
+          },
+          {
+            "text": "modernization ",
+            "shap": -0.01633908972144127
+          },
+          {
+            "text": "strategy.<",
+            "shap": -0.03267817944288254
+          }
+        ],
+        "base_value": -3.060752661668559
+      }
+    },
+    {
+      "id": "Ambrosio1994_real-and-fake-news_train_wl_news_whitelist_v11_selected_grouped.csv_13",
+      "source": "AFP Fact Check",
+      "topic": "SCI_TECH",
+      "group": "B",
+      "title": "Canada's personal-data rules were quietly expanded",
+      "content": "Online posts asserted that Canada's personal-data rules had been quietly expanded to allow broader access. The claim circulated with screenshot threads and short legal-style captions presented as policy updates. The message spread across discussion channels as a privacy warning.",
+      "truth": {
+        "label": "FAKE"
+      },
+      "ai": {
+        "label": "TRUE",
+        "probs": {
+          "FAKE": 8.717643504496664e-05,
+          "TRUE": 0.9999128580093384
+        },
+        "correct": false,
+        "confidence": 0.9999128580093384,
+        "conf_bin": "high"
+      },
+      "xai": {
+        "target": "logit(P(FAKE))",
+        "title_segments": [
+          {
+            "text": "Canada's ",
+            "shap": -0.3194430526345968
+          },
+          {
+            "text": "personal-data ",
+            "shap": -0.5816643377766013
+          },
+          {
+            "text": "rules ",
+            "shap": -0.2622212851420045
+          },
+          {
+            "text": "were ",
+            "shap": -0.2622212851420045
+          },
+          {
+            "text": "quietly ",
+            "shap": -0.2622212851420045
+          },
+          {
+            "text": "expanded",
+            "shap": -0.2622212851420045
+          }
+        ],
+        "content_segments": [
+          {
+            "text": "Online ",
+            "shap": -0.23656224282948593
+          },
+          {
+            "text": "posts ",
+            "shap": -0.23656224282948593
+          },
+          {
+            "text": "asserted ",
+            "shap": -0.23656224282948593
+          },
+          {
+            "text": "that ",
+            "shap": -0.23656224282948593
+          },
+          {
+            "text": "Canada's ",
+            "shap": -0.47312448565897186
+          },
+          {
+            "text": "personal-data ",
+            "shap": -0.6975491173458441
+          },
+          {
+            "text": "rules ",
+            "shap": -0.2244246316868723
+          },
+          {
+            "text": "had ",
+            "shap": -0.2244246316868723
+          },
+          {
+            "text": "been ",
+            "shap": -0.2244246316868723
+          },
+          {
+            "text": "quietly ",
+            "shap": -0.22442463168687232
+          },
+          {
+            "text": "expanded ",
+            "shap": -0.22442463168687232
+          },
+          {
+            "text": "to ",
+            "shap": -0.22442463168687232
+          },
+          {
+            "text": "allow ",
+            "shap": -0.22442463168687232
+          },
+          {
+            "text": "broader ",
+            "shap": -0.22442463168687232
+          },
+          {
+            "text": "access. ",
+            "shap": -0.44884926337374464
+          },
+          {
+            "text": "The ",
+            "shap": -0.01575407385826111
+          },
+          {
+            "text": "claim ",
+            "shap": -0.01575407385826111
+          },
+          {
+            "text": "circulated ",
+            "shap": -0.01575407385826111
+          },
+          {
+            "text": "with ",
+            "shap": -0.01575407385826111
+          },
+          {
+            "text": "screenshot ",
+            "shap": -0.01575407385826111
+          },
+          {
+            "text": "threads ",
+            "shap": -0.01575407385826111
+          },
+          {
+            "text": "and ",
+            "shap": -0.01575407385826111
+          },
+          {
+            "text": "short ",
+            "shap": -0.01575407385826111
+          },
+          {
+            "text": "legal-style ",
+            "shap": -0.047262221574783325
+          },
+          {
+            "text": "captions ",
+            "shap": -0.03150814771652222
+          },
+          {
+            "text": "presented ",
+            "shap": -0.01575407385826111
+          },
+          {
+            "text": "as ",
+            "shap": -0.01575407385826111
+          },
+          {
+            "text": "policy ",
+            "shap": -0.01575407385826111
+          },
+          {
+            "text": "updates. ",
+            "shap": -0.03150814771652222
+          },
+          {
+            "text": "The ",
+            "shap": -0.019193304436547414
+          },
+          {
+            "text": "message ",
+            "shap": -0.019193304436547414
+          },
+          {
+            "text": "spread ",
+            "shap": -0.019193304436547414
+          },
+          {
+            "text": "across ",
+            "shap": -0.019193304436547414
+          },
+          {
+            "text": "discussion ",
+            "shap": -0.019193304436547414
+          },
+          {
+            "text": "channels ",
+            "shap": -0.019193304436547414
+          },
+          {
+            "text": "as ",
+            "shap": -0.019193304436547414
+          },
+          {
+            "text": "a ",
+            "shap": -0.019193304436547414
+          },
+          {
+            "text": "privacy ",
+            "shap": -0.019193304436547414
+          },
+          {
+            "text": "warning.<",
+            "shap": -0.03838660887309483
+          }
+        ],
+        "base_value": -2.5416282232242926
+      }
+    },
+    {
+      "id": "Ambrosio1994_real-and-fake-news_train_wl_news_whitelist_v11_selected_grouped.csv_15",
+      "source": "Snopes",
+      "topic": "BUSINESS",
+      "group": "B",
+      "title": "Trump Said He Would Not Defend NATO Allies If Russia Attacks Them",
+      "content": "Posts on social platforms claimed that trump Said He Would Not Defend NATO Allies If Russia Attacks Them. The claim spread through screenshots, short videos, and reposted text.",
+      "truth": {
+        "label": "FAKE"
+      },
+      "ai": {
+        "label": "FAKE",
+        "probs": {
+          "FAKE": 0.9999790191650391,
+          "TRUE": 2.098571894748602e-05
+        },
+        "correct": true,
+        "confidence": 0.9999790191650391,
+        "conf_bin": "high"
+      },
+      "xai": {
+        "target": "logit(P(FAKE))",
+        "title_segments": [
+          {
+            "text": "Trump ",
+            "shap": 0.040088024006949524
+          },
+          {
+            "text": "Said ",
+            "shap": 0.040088024006949524
+          },
+          {
+            "text": "He ",
+            "shap": 0.040088024006949524
+          },
+          {
+            "text": "Would ",
+            "shap": 0.040088024006949524
+          },
+          {
+            "text": "Not ",
+            "shap": 0.040088024006949524
+          },
+          {
+            "text": "Defend ",
+            "shap": 0.06018096253275871
+          },
+          {
+            "text": "NATO ",
+            "shap": 0.030090481266379355
+          },
+          {
+            "text": "Allies ",
+            "shap": 0.030090481266379355
+          },
+          {
+            "text": "If ",
+            "shap": 0.030090481266379355
+          },
+          {
+            "text": "Russia ",
+            "shap": 0.030090481266379355
+          },
+          {
+            "text": "Attacks ",
+            "shap": 0.030090481266379355
+          },
+          {
+            "text": "Them",
+            "shap": 0.030090481266379355
+          }
+        ],
+        "content_segments": [
+          {
+            "text": "Posts ",
+            "shap": 0.030090481266379355
+          },
+          {
+            "text": "on ",
+            "shap": 0.030090481266379355
+          },
+          {
+            "text": "social ",
+            "shap": 0.030090481266379355
+          },
+          {
+            "text": "platforms ",
+            "shap": 0.030090481266379355
+          },
+          {
+            "text": "claimed ",
+            "shap": 0.030090481266379355
+          },
+          {
+            "text": "that ",
+            "shap": 0.051952766130367915
+          },
+          {
+            "text": "trump ",
+            "shap": 0.051952766130367915
+          },
+          {
+            "text": "Said ",
+            "shap": 0.051952766130367915
+          },
+          {
+            "text": "He ",
+            "shap": 0.051952766130367915
+          },
+          {
+            "text": "Would ",
+            "shap": 0.051952766130367915
+          },
+          {
+            "text": "Not ",
+            "shap": 0.051952766130367915
+          },
+          {
+            "text": "Def",
+            "shap": 0.051952766130367915
+          }
+        ],
+        "base_value": 9.816594437375272
+      }
+    },
+    {
+      "id": "Ambrosio1994_real-and-fake-news_train_wl_news_whitelist_v11_selected_grouped.csv_14",
+      "source": "Cybernews",
+      "topic": "SCI_TECH",
+      "group": "D",
+      "title": "NASA says AI tools could help plan future life-detection missions",
+      "content": "NASA officials said AI systems are expected to play a larger role in future life-detection mission planning and onboard analysis. Program teams highlighted autonomous anomaly detection and decision support as key applications. Agency briefings said reliability standards are being expanded for mission-critical use.",
+      "truth": {
+        "label": "TRUE"
+      },
+      "ai": {
+        "label": "TRUE",
+        "probs": {
+          "FAKE": 3.2403531804447994e-05,
+          "TRUE": 0.9999675750732422
+        },
+        "correct": true,
+        "confidence": 0.9999675750732422,
+        "conf_bin": "high"
+      },
+      "xai": {
+        "target": "logit(P(FAKE))",
+        "title_segments": [
+          {
+            "text": "NASA ",
+            "shap": -0.28526282572420314
+          },
+          {
+            "text": "says ",
+            "shap": -0.28526282572420314
+          },
+          {
+            "text": "AI ",
+            "shap": -0.28526282572420314
+          },
+          {
+            "text": "tools ",
+            "shap": -0.28526282572420314
+          },
+          {
+            "text": "could ",
+            "shap": -0.2998244490590878
+          },
+          {
+            "text": "help ",
+            "shap": -0.2998244490590878
+          },
+          {
+            "text": "plan ",
+            "shap": -0.2998244490590878
+          },
+          {
+            "text": "future ",
+            "shap": -0.2998244490590878
+          },
+          {
+            "text": "life-detection ",
+            "shap": -1.1992977962363511
+          },
+          {
+            "text": "missions",
+            "shap": -0.11951889899293228
+          }
+        ],
+        "content_segments": [
+          {
+            "text": "NASA ",
+            "shap": -0.11951889899293228
+          },
+          {
+            "text": "officials ",
+            "shap": -0.11951889899293228
+          },
+          {
+            "text": "said ",
+            "shap": -0.11951889899293228
+          },
+          {
+            "text": "AI ",
+            "shap": -0.11951889899293228
+          },
+          {
+            "text": "systems ",
+            "shap": -0.11951889899293228
+          },
+          {
+            "text": "are ",
+            "shap": -0.11951889899293228
+          },
+          {
+            "text": "expected ",
+            "shap": -0.11951889899293228
+          },
+          {
+            "text": "to ",
+            "shap": -0.11951889899293228
+          },
+          {
+            "text": "play ",
+            "shap": -0.11951889899293228
+          },
+          {
+            "text": "a ",
+            "shap": -0.11951889899293228
+          },
+          {
+            "text": "larger ",
+            "shap": -0.11951889899293228
+          },
+          {
+            "text": "role ",
+            "shap": -0.11951889899293228
+          },
+          {
+            "text": "in ",
+            "shap": -0.12589310181681954
+          },
+          {
+            "text": "future ",
+            "shap": -0.12589310181681954
+          },
+          {
+            "text": "life-detection ",
+            "shap": -0.5035724072672781
+          },
+          {
+            "text": "mission ",
+            "shap": -0.12589310181681954
+          },
+          {
+            "text": "planning ",
+            "shap": -0.12589310181681954
+          },
+          {
+            "text": "and ",
+            "shap": -0.12589310181681954
+          },
+          {
+            "text": "onboard ",
+            "shap": -0.12589310181681954
+          },
+          {
+            "text": "analysis. ",
+            "shap": -0.25178620363363907
+          },
+          {
+            "text": "Program ",
+            "shap": -0.014159835301912749
+          },
+          {
+            "text": "teams ",
+            "shap": -0.014159835301912749
+          },
+          {
+            "text": "highlighted ",
+            "shap": -0.014159835301912749
+          },
+          {
+            "text": "autonomous ",
+            "shap": -0.014159835301912749
+          },
+          {
+            "text": "anomaly ",
+            "shap": -0.014159835301912747
+          },
+          {
+            "text": "detection ",
+            "shap": -0.014159835301912747
+          },
+          {
+            "text": "and ",
+            "shap": -0.014159835301912747
+          },
+          {
+            "text": "decision ",
+            "shap": -0.014159835301912746
+          },
+          {
+            "text": "support ",
+            "shap": -0.014159835301912746
+          },
+          {
+            "text": "as ",
+            "shap": -0.014159835301912746
+          },
+          {
+            "text": "key ",
+            "shap": -0.014159835301912746
+          },
+          {
+            "text": "applications. ",
+            "shap": -0.028319670603825495
+          },
+          {
+            "text": "Agency ",
+            "shap": -0.02321792350095861
+          },
+          {
+            "text": "briefings ",
+            "shap": -0.02321792350095861
+          },
+          {
+            "text": "said ",
+            "shap": -0.02321792350095861
+          },
+          {
+            "text": "reliability ",
+            "shap": -0.02321792350095861
+          },
+          {
+            "text": "standards ",
+            "shap": -0.02321792350095861
+          },
+          {
+            "text": "are ",
+            "shap": -0.02321792350095861
+          },
+          {
+            "text": "being ",
+            "shap": -0.02321792350095861
+          },
+          {
+            "text": "expanded ",
+            "shap": -0.02321792350095861
+          },
+          {
+            "text": "for ",
+            "shap": -0.023217923500958613
+          },
+          {
+            "text": "mission-critical ",
+            "shap": -0.06965377050287584
+          },
+          {
+            "text": "use.<",
+            "shap": -0.046435847001917226
+          }
+        ],
+        "base_value": -3.22397213872207
+      }
+    },
+    {
+      "id": "Ambrosio1994_real-and-fake-news_train_wl_news_whitelist_v11_selected_grouped.csv_9",
+      "source": "Frontiers",
+      "topic": "HEALTH",
+      "group": "A",
+      "title": "German hospitals expand sustainability initiatives in clinical operations",
+      "content": "A healthcare review reported wider adoption of sustainability strategies in German hospitals, including energy efficiency and procurement changes. Administrators said early implementation has reduced operating waste in several systems. Researchers noted that funding capacity remains uneven across regions.",
+      "truth": {
+        "label": "TRUE"
+      },
+      "ai": {
+        "label": "TRUE",
+        "probs": {
+          "FAKE": 3.5420438507571816e-05,
+          "TRUE": 0.9999645948410034
+        },
+        "correct": true,
+        "confidence": 0.9999645948410034,
+        "conf_bin": "high"
+      },
+      "xai": {
+        "target": "logit(P(FAKE))",
+        "title_segments": [
+          {
+            "text": "German ",
+            "shap": -0.28606515657156706
+          },
+          {
+            "text": "hospitals ",
+            "shap": -0.28606515657156706
+          },
+          {
+            "text": "expand ",
+            "shap": -0.28606515657156706
+          },
+          {
+            "text": "sustainability ",
+            "shap": -0.28606515657156706
+          },
+          {
+            "text": "initiatives ",
+            "shap": -0.07213189732283354
+          },
+          {
+            "text": "in ",
+            "shap": -0.07213189732283354
+          },
+          {
+            "text": "clinical ",
+            "shap": -0.07213189732283354
+          },
+          {
+            "text": "operations",
+            "shap": -0.07213189732283354
+          }
+        ],
+        "content_segments": [
+          {
+            "text": "A ",
+            "shap": -0.07213189732283354
+          },
+          {
+            "text": "healthcare ",
+            "shap": -0.3887006392081579
+          },
+          {
+            "text": "review ",
+            "shap": -0.3887006392081579
+          },
+          {
+            "text": "reported ",
+            "shap": -0.3887006392081579
+          },
+          {
+            "text": "wider ",
+            "shap": -0.3887006392081579
+          },
+          {
+            "text": "adoption ",
+            "shap": -0.3887006392081579
+          },
+          {
+            "text": "of ",
+            "shap": -0.3887006392081579
+          },
+          {
+            "text": "sustainability ",
+            "shap": -0.3887006392081579
+          },
+          {
+            "text": "strategies ",
+            "shap": -0.3887006392081579
+          },
+          {
+            "text": "in ",
+            "shap": -0.1930213583012422
+          },
+          {
+            "text": "German ",
+            "shap": -0.1930213583012422
+          },
+          {
+            "text": "hospitals, ",
+            "shap": -0.3860427166024844
+          },
+          {
+            "text": "including ",
+            "shap": -0.10027342294342816
+          },
+          {
+            "text": "energy ",
+            "shap": -0.10027342294342816
+          },
+          {
+            "text": "efficiency ",
+            "shap": -0.10027342294342816
+          },
+          {
+            "text": "and ",
+            "shap": -0.10027342294342816
+          },
+          {
+            "text": "procurement ",
+            "shap": -0.10027342294342817
+          },
+          {
+            "text": "changes. ",
+            "shap": -0.20054684588685634
+          },
+          {
+            "text": "Administrators ",
+            "shap": -0.20054684588685634
+          },
+          {
+            "text": "said ",
+            "shap": -0.10027342294342817
+          },
+          {
+            "text": "early ",
+            "shap": -0.10027342294342817
+          },
+          {
+            "text": "implementation ",
+            "shap": -0.10027342294342817
+          },
+          {
+            "text": "has ",
+            "shap": -0.10027342294342817
+          },
+          {
+            "text": "reduced ",
+            "shap": -0.10027342294342817
+          },
+          {
+            "text": "operating ",
+            "shap": -0.10027342294342817
+          },
+          {
+            "text": "waste ",
+            "shap": -0.10027342294342816
+          },
+          {
+            "text": "in ",
+            "shap": -0.10027342294342816
+          },
+          {
+            "text": "several ",
+            "shap": -0.10027342294342816
+          },
+          {
+            "text": "systems. ",
+            "shap": -0.2005468458868563
+          },
+          {
+            "text": "Researchers ",
+            "shap": 0.00960480715506352
+          },
+          {
+            "text": "noted ",
+            "shap": 0.00960480715506352
+          },
+          {
+            "text": "that ",
+            "shap": 0.00960480715506352
+          },
+          {
+            "text": "funding ",
+            "shap": 0.00960480715506352
+          },
+          {
+            "text": "capacity ",
+            "shap": 0.00960480715506352
+          },
+          {
+            "text": "remains ",
+            "shap": 0.00960480715506352
+          },
+          {
+            "text": "uneven ",
+            "shap": 0.00960480715506352
+          },
+          {
+            "text": "across ",
+            "shap": 0.00960480715506352
+          },
+          {
+            "text": "regions.<",
+            "shap": 0.01920961431012704
+          }
+        ],
+        "base_value": -2.9521550773067284
+      }
+    },
+    {
+      "id": "Ambrosio1994_real-and-fake-news_train_wl_news_whitelist_v11_selected_grouped.csv_20",
+      "source": "AFP Fact Check",
+      "topic": "SOCIETY",
+      "group": "D",
+      "title": "Posts claim canadian tourist pass reignites surveillance conspiracy theories",
+      "content": "Posts on social platforms claimed that canadian tourist pass reignites surveillance conspiracy theories. The claim spread through screenshots, short videos, and reposted text.",
+      "truth": {
+        "label": "FAKE"
+      },
+      "ai": {
+        "label": "TRUE",
+        "probs": {
+          "FAKE": 0.00019119672651868314,
+          "TRUE": 0.9998088479042053
+        },
+        "correct": false,
+        "confidence": 0.9998088479042053,
+        "conf_bin": "high"
+      },
+      "xai": {
+        "target": "logit(P(FAKE))",
+        "title_segments": [
+          {
+            "text": "Posts ",
+            "shap": -0.044186742044985294
+          },
+          {
+            "text": "claim ",
+            "shap": -0.044186742044985294
+          },
+          {
+            "text": "canadian ",
+            "shap": -0.08837348408997059
+          },
+          {
+            "text": "tourist ",
+            "shap": -0.2859140569344163
+          },
+          {
+            "text": "pass ",
+            "shap": -0.2859140569344163
+          },
+          {
+            "text": "reignites ",
+            "shap": -0.5718281138688326
+          },
+          {
+            "text": "surveillance ",
+            "shap": -0.2859140569344163
+          },
+          {
+            "text": "conspiracy ",
+            "shap": -0.2859140569344163
+          },
+          {
+            "text": "theories",
+            "shap": -0.2859140569344163
+          }
+        ],
+        "content_segments": [
+          {
+            "text": "Posts ",
+            "shap": -0.0658749793138769
+          },
+          {
+            "text": "on ",
+            "shap": -0.0658749793138769
+          },
+          {
+            "text": "social ",
+            "shap": -0.0658749793138769
+          },
+          {
+            "text": "platforms ",
+            "shap": -0.0658749793138769
+          },
+          {
+            "text": "claimed ",
+            "shap": -0.0658749793138769
+          },
+          {
+            "text": "that ",
+            "shap": -0.0658749793138769
+          },
+          {
+            "text": "canadian ",
+            "shap": -0.46970507138305245
+          },
+          {
+            "text": "tourist ",
+            "shap": -0.23485253569152623
+          },
+          {
+            "text": "pass ",
+            "shap": -0.23485253569152623
+          },
+          {
+            "text": "reignites ",
+            "shap": -0.46970507138305245
+          },
+          {
+            "text": "surveillance ",
+            "shap": -0.23485253569152623
+          },
+          {
+            "text": "conspiracy ",
+            "shap": -0.23485253569152623
+          },
+          {
+            "text": "theories. ",
+            "shap": -0.46970507138305245
+          },
+          {
+            "text": "The ",
+            "shap": -0.1297611114051607
+          },
+          {
+            "text": "claim ",
+            "shap": -0.1297611114051607
+          },
+          {
+            "text": "spread ",
+            "shap": -0.1297611114051607
+          },
+          {
+            "text": "through ",
+            "shap": -0.1297611114051607
+          },
+          {
+            "text": "screenshots, ",
+            "shap": -0.2595222228103214
+          },
+          {
+            "text": "short ",
+            "shap": -0.1297611114051607
+          },
+          {
+            "text": "videos, ",
+            "shap": -0.2595222228103214
+          },
+          {
+            "text": "and ",
+            "shap": -0.13291609121693507
+          },
+          {
+            "text": "reposted ",
+            "shap": -0.39874827365080523
+          },
+          {
+            "text": "text.<",
+            "shap": -0.26583218243387013
+          }
+        ],
+        "base_value": -1.6747493137373368
+      }
+    },
+    {
+      "id": "Ambrosio1994_real-and-fake-news_train_wl_news_whitelist_v11_selected_grouped.csv_2",
+      "source": "Snopes",
+      "topic": "POLITICS",
+      "group": "B",
+      "title": "Mormon Founder Joseph Smith Was 1st Assassinated US Presidential Candidate",
+      "content": "Social posts alleged that mormon Founder Joseph Smith Was 1st Assassinated US Presidential Candidate. The claim circulated with images and brief explanations presented as evidence.",
+      "truth": {
+        "label": "FAKE"
+      },
+      "ai": {
+        "label": "FAKE",
+        "probs": {
+          "FAKE": 0.9999790191650391,
+          "TRUE": 2.0934607164235786e-05
+        },
+        "correct": true,
+        "confidence": 0.9999790191650391,
+        "conf_bin": "high"
+      },
+      "xai": {
+        "target": "logit(P(FAKE))",
+        "title_segments": [
+          {
+            "text": "Mormon ",
+            "shap": 0.08524709194898605
+          },
+          {
+            "text": "Founder ",
+            "shap": 0.04262354597449303
+          },
+          {
+            "text": "Joseph ",
+            "shap": 0.04262354597449303
+          },
+          {
+            "text": "Smith ",
+            "shap": 0.06158233806490898
+          },
+          {
+            "text": "Was ",
+            "shap": 0.06158233806490898
+          },
+          {
+            "text": "1st ",
+            "shap": 0.12316467612981796
+          },
+          {
+            "text": "Assassinated ",
+            "shap": 0.12316467612981796
+          },
+          {
+            "text": "US ",
+            "shap": 0.06158233806490898
+          },
+          {
+            "text": "Presidential ",
+            "shap": 0.06158233806490898
+          },
+          {
+            "text": "Candidate",
+            "shap": 0.04463933137330142
+          }
+        ],
+        "content_segments": [
+          {
+            "text": "Social ",
+            "shap": 0.04463933137330142
+          },
+          {
+            "text": "posts ",
+            "shap": 0.04463933137330142
+          },
+          {
+            "text": "alleged ",
+            "shap": 0.04463933137330142
+          },
+          {
+            "text": "that ",
+            "shap": 0.04463933137330142
+          },
+          {
+            "text": "mormon ",
+            "shap": 0.06466211049587696
+          },
+          {
+            "text": "Founder ",
+            "shap": 0.03233105524793848
+          },
+          {
+            "text": "Joseph ",
+            "shap": 0.03233105524793848
+          },
+          {
+            "text": "Smith ",
+            "shap": 0.03233105524793848
+          },
+          {
+            "text": "Was ",
+            "shap": 0.03233105524793848
+          },
+          {
+            "text": "1st ",
+            "shap": 0.06466211049587696
+          },
+          {
+            "text": "Assassinated ",
+            "shap": 0.06466211049587696
+          },
+          {
+            "text": "US ",
+            "shap": 0.03233105524793848
+          },
+          {
+            "text": "Presidential ",
+            "shap": 0.03233105524793848
+          },
+          {
+            "text": "Candidate. ",
+            "shap": 0.06466211049587696
+          },
+          {
+            "text": "The ",
+            "shap": 0.007557594776153564
+          },
+          {
+            "text": "claim ",
+            "shap": 0.007557594776153564
+          },
+          {
+            "text": "circulated ",
+            "shap": 0.007557594776153565
+          },
+          {
+            "text": "with ",
+            "shap": 0.007557594776153565
+          },
+          {
+            "text": "images ",
+            "shap": 0.007557594776153565
+          },
+          {
+            "text": "and ",
+            "shap": 0.00620306134223938
+          },
+          {
+            "text": "brief ",
+            "shap": 0.00620306134223938
+          },
+          {
+            "text": "explanations ",
+            "shap": 0.00620306134223938
+          },
+          {
+            "text": "presented ",
+            "shap": 0.00620306134223938
+          },
+          {
+            "text": "as ",
+            "shap": 0.00620306134223938
+          },
+          {
+            "text": "evidence.<",
+            "shap": 0.01240612268447876
+          }
+        ],
+        "base_value": 9.351686454754194
+      }
+    },
+    {
+      "id": "Ambrosio1994_real-and-fake-news_train_wl_news_whitelist_v11_selected_grouped.csv_18",
+      "source": "PolitiFact",
+      "topic": "BUSINESS",
+      "group": "C",
+      "title": "Crime is down in Venezuela, not as much as Donald Trump says",
+      "content": "Users shared content saying crime is down in Venezuela, not as much as Donald Trump says. The claim circulated with chart snippets and translated extracts from local reports. The discussion spread across campaign and policy channels.",
+      "truth": {
+        "label": "TRUE"
+      },
+      "ai": {
+        "label": "TRUE",
+        "probs": {
+          "FAKE": 0.00033448991598561406,
+          "TRUE": 0.9996654987335205
+        },
+        "correct": true,
+        "confidence": 0.9996654987335205,
+        "conf_bin": "high"
+      },
+      "xai": {
+        "target": "logit(P(FAKE))",
+        "title_segments": [
+          {
+            "text": "Crime ",
+            "shap": -0.1906343311071396
+          },
+          {
+            "text": "is ",
+            "shap": -0.1906343311071396
+          },
+          {
+            "text": "down ",
+            "shap": -0.1906343311071396
+          },
+          {
+            "text": "in ",
+            "shap": -0.1906343311071396
+          },
+          {
+            "text": "Venezuela, ",
+            "shap": -0.3812686622142792
+          },
+          {
+            "text": "not ",
+            "shap": -0.12172006560223443
+          },
+          {
+            "text": "as ",
+            "shap": -0.12172006560223443
+          },
+          {
+            "text": "much ",
+            "shap": -0.12172006560223443
+          },
+          {
+            "text": "as ",
+            "shap": -0.12172006560223443
+          },
+          {
+            "text": "Donald ",
+            "shap": -0.12172006560223443
+          },
+          {
+            "text": "Trump ",
+            "shap": -0.12172006560223443
+          },
+          {
+            "text": "says",
+            "shap": -0.12172006560223443
+          }
+        ],
+        "content_segments": [
+          {
+            "text": "Users ",
+            "shap": -0.12172006560223443
+          },
+          {
+            "text": "shared ",
+            "shap": -0.12172006560223443
+          },
+          {
+            "text": "content ",
+            "shap": -0.12172006560223443
+          },
+          {
+            "text": "saying ",
+            "shap": -0.12172006560223443
+          },
+          {
+            "text": "crime ",
+            "shap": -0.12172006560223443
+          },
+          {
+            "text": "is ",
+            "shap": -0.12172006560223443
+          },
+          {
+            "text": "down ",
+            "shap": -0.12172006560223443
+          },
+          {
+            "text": "in ",
+            "shap": -0.12172006560223443
+          },
+          {
+            "text": "Venezuela, ",
+            "shap": -0.24344013120446886
+          },
+          {
+            "text": "not ",
+            "shap": -0.05262611699955804
+          },
+          {
+            "text": "as ",
+            "shap": -0.05262611699955804
+          },
+          {
+            "text": "much ",
+            "shap": -0.05262611699955804
+          },
+          {
+            "text": "as ",
+            "shap": -0.05262611699955804
+          },
+          {
+            "text": "Donald ",
+            "shap": -0.05262611699955804
+          },
+          {
+            "text": "Trump ",
+            "shap": -0.05262611699955804
+          },
+          {
+            "text": "says. ",
+            "shap": -0.10525223399911608
+          },
+          {
+            "text": "The ",
+            "shap": -0.22159541394193094
+          },
+          {
+            "text": "claim ",
+            "shap": -0.22159541394193094
+          },
+          {
+            "text": "circulated ",
+            "shap": -0.22159541394193094
+          },
+          {
+            "text": "with ",
+            "shap": -0.22159541394193094
+          },
+          {
+            "text": "chart ",
+            "shap": -0.22159541394193094
+          },
+          {
+            "text": "snippets ",
+            "shap": -0.22159541394193094
+          },
+          {
+            "text": "and ",
+            "shap": -0.22159541394193094
+          },
+          {
+            "text": "translated ",
+            "shap": -0.28211816280889207
+          },
+          {
+            "text": "extracts ",
+            "shap": -0.28211816280889207
+          },
+          {
+            "text": "from ",
+            "shap": -0.28211816280889207
+          },
+          {
+            "text": "local ",
+            "shap": -0.28211816280889207
+          },
+          {
+            "text": "reports. ",
+            "shap": -0.5642363256177841
+          },
+          {
+            "text": "The ",
+            "shap": 0.02769845227400462
+          },
+          {
+            "text": "discussion ",
+            "shap": 0.02769845227400462
+          },
+          {
+            "text": "spread ",
+            "shap": 0.02769845227400462
+          },
+          {
+            "text": "across ",
+            "shap": 0.02769845227400462
+          },
+          {
+            "text": "campaign ",
+            "shap": 0.02769845227400462
+          },
+          {
+            "text": "and ",
+            "shap": 0.02769845227400462
+          },
+          {
+            "text": "policy ",
+            "shap": 0.02769845227400462
+          },
+          {
+            "text": "channels.<",
+            "shap": 0.05539690454800924
+          }
+        ],
+        "base_value": -1.373922437652376
+      }
+    },
+    {
+      "id": "Ambrosio1994_real-and-fake-news_train_wl_news_whitelist_v11_selected_grouped.csv_4",
+      "source": "APRI - Africa Policy Research Institute",
+      "topic": "POLITICS",
+      "group": "B",
+      "title": "South Africa coalition talks continue amid disputes over cabinet posts and budget plans",
+      "content": "South Africa's coalition negotiations moved into a decisive phase as party leaders bargained over cabinet posts and fiscal priorities. Analysts said control of key ministries will shape both domestic spending and foreign-policy direction. Early parliamentary votes are expected to test whether the coalition can sustain a governing majority.",
+      "truth": {
+        "label": "TRUE"
+      },
+      "ai": {
+        "label": "TRUE",
+        "probs": {
+          "FAKE": 3.107938027824275e-05,
+          "TRUE": 0.9999688863754272
+        },
+        "correct": true,
+        "confidence": 0.9999688863754272,
+        "conf_bin": "high"
+      },
+      "xai": {
+        "target": "logit(P(FAKE))",
+        "title_segments": [
+          {
+            "text": "South ",
+            "shap": -0.14537033985058467
+          },
+          {
+            "text": "Africa ",
+            "shap": -0.14537033985058467
+          },
+          {
+            "text": "coalition ",
+            "shap": -0.14537033985058467
+          },
+          {
+            "text": "talks ",
+            "shap": -0.14537033985058467
+          },
+          {
+            "text": "continue ",
+            "shap": -0.2564140410650344
+          },
+          {
+            "text": "amid ",
+            "shap": -0.2564140410650344
+          },
+          {
+            "text": "disputes ",
+            "shap": -0.2564140410650344
+          },
+          {
+            "text": "over ",
+            "shap": -0.2564140410650344
+          },
+          {
+            "text": "cabinet ",
+            "shap": -0.2564140410650344
+          },
+          {
+            "text": "posts ",
+            "shap": -0.2564140410650344
+          },
+          {
+            "text": "and ",
+            "shap": -0.2564140410650344
+          },
+          {
+            "text": "budget ",
+            "shap": -0.12777321402811342
+          },
+          {
+            "text": "plans",
+            "shap": -0.12777321402811342
+          }
+        ],
+        "content_segments": [
+          {
+            "text": "South ",
+            "shap": -0.12777321402811342
+          },
+          {
+            "text": "Africa's ",
+            "shap": -0.25554642805622685
+          },
+          {
+            "text": "coalition ",
+            "shap": -0.12777321402811342
+          },
+          {
+            "text": "negotiations ",
+            "shap": -0.12777321402811342
+          },
+          {
+            "text": "moved ",
+            "shap": -0.12777321402811342
+          },
+          {
+            "text": "into ",
+            "shap": -0.12777321402811342
+          },
+          {
+            "text": "a ",
+            "shap": -0.12777321402811342
+          },
+          {
+            "text": "decisive ",
+            "shap": -0.12777321402811342
+          },
+          {
+            "text": "phase ",
+            "shap": -0.12777321402811342
+          },
+          {
+            "text": "as ",
+            "shap": -0.12777321402811342
+          },
+          {
+            "text": "party ",
+            "shap": -0.0543094983305594
+          },
+          {
+            "text": "leaders ",
+            "shap": -0.0543094983305594
+          },
+          {
+            "text": "bargained ",
+            "shap": -0.1086189966611188
+          },
+          {
+            "text": "over ",
+            "shap": -0.0543094983305594
+          },
+          {
+            "text": "cabinet ",
+            "shap": -0.0543094983305594
+          },
+          {
+            "text": "posts ",
+            "shap": -0.0543094983305594
+          },
+          {
+            "text": "and ",
+            "shap": -0.0543094983305594
+          },
+          {
+            "text": "fiscal ",
+            "shap": -0.0543094983305594
+          },
+          {
+            "text": "priorities. ",
+            "shap": -0.1086189966611188
+          },
+          {
+            "text": "Analysts ",
+            "shap": -0.1690522101190355
+          },
+          {
+            "text": "said ",
+            "shap": -0.08452610505951776
+          },
+          {
+            "text": "control ",
+            "shap": -0.08452610505951776
+          },
+          {
+            "text": "of ",
+            "shap": -0.08452610505951776
+          },
+          {
+            "text": "key ",
+            "shap": -0.08452610505951776
+          },
+          {
+            "text": "ministries ",
+            "shap": -0.08452610505951776
+          },
+          {
+            "text": "will ",
+            "shap": -0.08452610505951776
+          },
+          {
+            "text": "shape ",
+            "shap": -0.08452610505951774
+          },
+          {
+            "text": "both ",
+            "shap": -0.08452610505951774
+          },
+          {
+            "text": "domestic ",
+            "shap": -0.08452610505951774
+          },
+          {
+            "text": "spending ",
+            "shap": -0.08452610505951774
+          },
+          {
+            "text": "and ",
+            "shap": -0.08452610505951774
+          },
+          {
+            "text": "foreign-policy ",
+            "shap": -0.2535783151785532
+          },
+          {
+            "text": "direction. ",
+            "shap": -0.16905221011903548
+          },
+          {
+            "text": "Early ",
+            "shap": -0.08246502437089619
+          },
+          {
+            "text": "parliamentary ",
+            "shap": -0.08246502437089619
+          },
+          {
+            "text": "votes ",
+            "shap": -0.08246502437089619
+          },
+          {
+            "text": "are ",
+            "shap": -0.08246502437089619
+          },
+          {
+            "text": "expected ",
+            "shap": -0.08246502437089619
+          },
+          {
+            "text": "to ",
+            "shap": -0.08246502437089619
+          },
+          {
+            "text": "test ",
+            "shap": -0.08246502437089619
+          },
+          {
+            "text": "whether ",
+            "shap": -0.08246502437089619
+          },
+          {
+            "text": "the ",
+            "shap": -0.08246502437089619
+          },
+          {
+            "text": "coalition ",
+            "shap": -0.08246502437089619
+          },
+          {
+            "text": "can ",
+            "shap": -0.08246502437089619
+          },
+          {
+            "text": "sustain ",
+            "shap": -0.08246502437089619
+          },
+          {
+            "text": "a ",
+            "shap": -0.08246502437089619
+          },
+          {
+            "text": "governing ",
+            "shap": -0.08246502437089619
+          },
+          {
+            "text": "majority.<",
+            "shap": -0.16493004874179237
+          }
+        ],
+        "base_value": -2.903188700502983
+      }
+    },
+    {
+      "id": "Ambrosio1994_real-and-fake-news_train_wl_news_whitelist_v11_selected_grouped.csv_10",
+      "source": "Rice University",
+      "topic": "SCI_TECH",
+      "group": "A",
+      "title": "Artemis II delay leads NASA to review mission-readiness plans",
+      "content": "Following schedule changes to Artemis II, experts discussed implications for test timelines, crew preparation, and launch-sequence planning. Briefings highlighted dependencies between hardware validation and downstream mission milestones. Analysts said risk management decisions in this phase will shape later program tempo.",
+      "truth": {
+        "label": "TRUE"
+      },
+      "ai": {
+        "label": "TRUE",
+        "probs": {
+          "FAKE": 3.4358348784735426e-05,
+          "TRUE": 0.9999656677246094
+        },
+        "correct": true,
+        "confidence": 0.9999656677246094,
+        "conf_bin": "high"
+      },
+      "xai": {
+        "target": "logit(P(FAKE))",
+        "title_segments": [
+          {
+            "text": "Artemis ",
+            "shap": -0.7910754410205064
+          },
+          {
+            "text": "II ",
+            "shap": -0.3955377205102532
+          },
+          {
+            "text": "delay ",
+            "shap": -0.3955377205102532
+          },
+          {
+            "text": "leads ",
+            "shap": -0.3955377205102532
+          },
+          {
+            "text": "NASA ",
+            "shap": -0.3955377205102532
+          },
+          {
+            "text": "to ",
+            "shap": -0.3955377205102532
+          },
+          {
+            "text": "review ",
+            "shap": -0.3955377205102532
+          },
+          {
+            "text": "mission-readiness ",
+            "shap": -1.5821508820410128
+          },
+          {
+            "text": "plans",
+            "shap": -0.14860689981216535
+          }
+        ],
+        "content_segments": [
+          {
+            "text": "Following ",
+            "shap": -0.14860689981216532
+          },
+          {
+            "text": "schedule ",
+            "shap": -0.14860689981216532
+          },
+          {
+            "text": "changes ",
+            "shap": -0.14860689981216532
+          },
+          {
+            "text": "to ",
+            "shap": -0.14860689981216532
+          },
+          {
+            "text": "Artemis ",
+            "shap": -0.14860689981216532
+          },
+          {
+            "text": "II, ",
+            "shap": -0.29721379962433064
+          },
+          {
+            "text": "experts ",
+            "shap": -0.021335774234363006
+          },
+          {
+            "text": "discussed ",
+            "shap": -0.021335774234363006
+          },
+          {
+            "text": "implications ",
+            "shap": -0.021335774234363006
+          },
+          {
+            "text": "for ",
+            "shap": -0.021335774234363006
+          },
+          {
+            "text": "test ",
+            "shap": -0.021335774234363006
+          },
+          {
+            "text": "timelines, ",
+            "shap": -0.04267154846872601
+          },
+          {
+            "text": "crew ",
+            "shap": -0.021335774234363006
+          },
+          {
+            "text": "preparation, ",
+            "shap": -0.04267154846872601
+          },
+          {
+            "text": "and ",
+            "shap": -0.021335774234363013
+          },
+          {
+            "text": "launch-sequence ",
+            "shap": -0.06400732270308904
+          },
+          {
+            "text": "planning. ",
+            "shap": -0.04267154846872603
+          },
+          {
+            "text": "Briefings ",
+            "shap": -0.04267154846872603
+          },
+          {
+            "text": "highlighted ",
+            "shap": -0.021335774234363013
+          },
+          {
+            "text": "dependencies ",
+            "shap": -0.021335774234363013
+          },
+          {
+            "text": "between ",
+            "shap": -0.021335774234363013
+          },
+          {
+            "text": "hardware ",
+            "shap": -0.021335774234363013
+          },
+          {
+            "text": "validation ",
+            "shap": -0.021335774234363013
+          },
+          {
+            "text": "and ",
+            "shap": -0.021335774234363013
+          },
+          {
+            "text": "downstream ",
+            "shap": -0.021335774234363013
+          },
+          {
+            "text": "mission ",
+            "shap": -0.021335774234363013
+          },
+          {
+            "text": "milestones. ",
+            "shap": -0.04267154846872603
+          },
+          {
+            "text": "Analysts ",
+            "shap": -0.02260690927505493
+          },
+          {
+            "text": "said ",
+            "shap": -0.011303454637527466
+          },
+          {
+            "text": "risk ",
+            "shap": -0.011303454637527466
+          },
+          {
+            "text": "management ",
+            "shap": -0.011303454637527466
+          },
+          {
+            "text": "decisions ",
+            "shap": -0.011303454637527466
+          },
+          {
+            "text": "in ",
+            "shap": -0.011303454637527466
+          },
+          {
+            "text": "this ",
+            "shap": -0.011303454637527466
+          },
+          {
+            "text": "phase ",
+            "shap": 0.0010831356048583984
+          },
+          {
+            "text": "will ",
+            "shap": 0.0010831356048583984
+          },
+          {
+            "text": "shape ",
+            "shap": 0.0010831356048583984
+          },
+          {
+            "text": "later ",
+            "shap": 0.0010831356048583984
+          },
+          {
+            "text": "program ",
+            "shap": 0.0010831356048583984
+          },
+          {
+            "text": "tempo.<",
+            "shap": 0.002166271209716797
+          }
+        ],
+        "base_value": -3.6630759483383573
+      }
+    },
+    {
+      "id": "Ambrosio1994_real-and-fake-news_train_wl_news_whitelist_v11_selected_grouped.csv_23",
+      "source": "AFP Fact Check",
+      "topic": "SOCIETY",
+      "group": "A",
+      "title": "Posts Claim Australia Listed George Soros as a 'Global Terrorist'",
+      "content": "Posts online claimed Australia had declared George Soros a 'global terrorist.' The claim spread across Facebook and X through screenshots and short captions.",
+      "truth": {
+        "label": "FAKE"
+      },
+      "ai": {
+        "label": "FAKE",
+        "probs": {
+          "FAKE": 0.9999791383743286,
+          "TRUE": 2.0892484826617874e-05
+        },
+        "correct": true,
+        "confidence": 0.9999791383743286,
+        "conf_bin": "high"
+      },
+      "xai": {
+        "target": "logit(P(FAKE))",
+        "title_segments": [
+          {
+            "text": "Posts ",
+            "shap": 0.12489629122945999
+          },
+          {
+            "text": "Claim ",
+            "shap": 0.12489629122945999
+          },
+          {
+            "text": "Australia ",
+            "shap": 0.12489629122945999
+          },
+          {
+            "text": "Listed ",
+            "shap": 0.24979258245891994
+          },
+          {
+            "text": "George ",
+            "shap": 0.06345056876158102
+          },
+          {
+            "text": "Soros ",
+            "shap": 0.06345056876158102
+          },
+          {
+            "text": "as ",
+            "shap": 0.06345056876158102
+          },
+          {
+            "text": "a ",
+            "shap": 0.06345056876158102
+          },
+          {
+            "text": "'Global ",
+            "shap": 0.12690113752316204
+          },
+          {
+            "text": "Terrorist'",
+            "shap": 0.169551337158287
+          }
+        ],
+        "content_segments": [
+          {
+            "text": "Posts ",
+            "shap": 0.05651711238609566
+          },
+          {
+            "text": "online ",
+            "shap": 0.0382894060828469
+          },
+          {
+            "text": "claimed ",
+            "shap": 0.0382894060828469
+          },
+          {
+            "text": "Australia ",
+            "shap": 0.0382894060828469
+          },
+          {
+            "text": "had ",
+            "shap": 0.0382894060828469
+          },
+          {
+            "text": "declared ",
+            "shap": 0.0382894060828469
+          },
+          {
+            "text": "George ",
+            "shap": 0.0382894060828469
+          },
+          {
+            "text": "Soros ",
+            "shap": 0.0382894060828469
+          },
+          {
+            "text": "a ",
+            "shap": 0.0382894060828469
+          },
+          {
+            "text": "'global ",
+            "shap": 0.0765788121656938
+          },
+          {
+            "text": "terrorist.' ",
+            "shap": 0.02405064455186478
+          },
+          {
+            "text": "The ",
+            "shap": -0.014238761530982122
+          },
+          {
+            "text": "claim ",
+            "shap": -0.014238761530982122
+          },
+          {
+            "text": "spread ",
+            "shap": -0.014238761530982122
+          },
+          {
+            "text": "across ",
+            "shap": -0.014238761530982122
+          },
+          {
+            "text": "Facebook ",
+            "shap": -0.014238761530982122
+          },
+          {
+            "text": "and ",
+            "shap": -0.014238761530982122
+          },
+          {
+            "text": "X ",
+            "shap": -0.014238761530982124
+          },
+          {
+            "text": "through ",
+            "shap": -0.014238761530982124
+          },
+          {
+            "text": "screenshots ",
+            "shap": -0.014238761530982124
+          },
+          {
+            "text": "and ",
+            "shap": -0.014238761530982124
+          },
+          {
+            "text": "short ",
+            "shap": -0.014238761530982124
+          },
+          {
+            "text": "captions.<",
+            "shap": -0.04271628459294637
+          }
+        ],
+        "base_value": 9.338722954904195
+      }
+    },
+    {
+      "id": "Ambrosio1994_real-and-fake-news_train_wl_news_whitelist_v11_selected_grouped.csv_5",
+      "source": "The World Economic Forum",
+      "topic": "HEALTH",
+      "group": "E",
+      "title": "Researchers report advances across several cancer treatment approaches",
+      "content": "Recent oncology reporting highlighted advances in trial design, targeted therapies, and earlier diagnosis protocols. Clinicians said improvements are increasingly tied to better patient stratification and faster referral coordination. Research teams cautioned that access and affordability remain major constraints.",
+      "truth": {
+        "label": "TRUE"
+      },
+      "ai": {
+        "label": "TRUE",
+        "probs": {
+          "FAKE": 5.955038432148285e-05,
+          "TRUE": 0.9999403953552246
+        },
+        "correct": true,
+        "confidence": 0.9999403953552246,
+        "conf_bin": "high"
+      },
+      "xai": {
+        "target": "logit(P(FAKE))",
+        "title_segments": [
+          {
+            "text": "Researchers ",
+            "shap": -0.3993117482616351
+          },
+          {
+            "text": "report ",
+            "shap": -0.3993117482616351
+          },
+          {
+            "text": "advances ",
+            "shap": -0.3993117482616351
+          },
+          {
+            "text": "across ",
+            "shap": -0.3993117482616351
+          },
+          {
+            "text": "several ",
+            "shap": -0.17675369443037572
+          },
+          {
+            "text": "cancer ",
+            "shap": -0.17675369443037572
+          },
+          {
+            "text": "treatment ",
+            "shap": -0.17675369443037572
+          },
+          {
+            "text": "approaches",
+            "shap": -0.17675369443037572
+          }
+        ],
+        "content_segments": [
+          {
+            "text": "Recent ",
+            "shap": -0.17675369443037575
+          },
+          {
+            "text": "oncology ",
+            "shap": -0.5302610832911272
+          },
+          {
+            "text": "reporting ",
+            "shap": -0.17675369443037572
+          },
+          {
+            "text": "highlighted ",
+            "shap": -0.17675369443037572
+          },
+          {
+            "text": "advances ",
+            "shap": -0.17675369443037572
+          },
+          {
+            "text": "in ",
+            "shap": -0.17675369443037572
+          },
+          {
+            "text": "trial ",
+            "shap": -0.1767536944303757
+          },
+          {
+            "text": "design, ",
+            "shap": -0.3535073888607514
+          },
+          {
+            "text": "targeted ",
+            "shap": -0.18391436338424683
+          },
+          {
+            "text": "therapies, ",
+            "shap": -0.36782872676849365
+          },
+          {
+            "text": "and ",
+            "shap": -0.18391436338424683
+          },
+          {
+            "text": "earlier ",
+            "shap": -0.18391436338424683
+          },
+          {
+            "text": "diagnosis ",
+            "shap": -0.18391436338424683
+          },
+          {
+            "text": "protocols. ",
+            "shap": -0.36782872676849365
+          },
+          {
+            "text": "Clinicians ",
+            "shap": -0.07321411721846637
+          },
+          {
+            "text": "said ",
+            "shap": -0.03660705860923318
+          },
+          {
+            "text": "improvements ",
+            "shap": -0.03660705860923318
+          },
+          {
+            "text": "are ",
+            "shap": -0.03660705860923318
+          },
+          {
+            "text": "increasingly ",
+            "shap": -0.03660705860923318
+          },
+          {
+            "text": "tied ",
+            "shap": -0.03660705860923318
+          },
+          {
+            "text": "to ",
+            "shap": -0.03660705860923318
+          },
+          {
+            "text": "better ",
+            "shap": -0.03660705860923318
+          },
+          {
+            "text": "patient ",
+            "shap": -0.03660705860923318
+          },
+          {
+            "text": "stratification ",
+            "shap": -0.07321411721846637
+          },
+          {
+            "text": "and ",
+            "shap": -0.03660705860923318
+          },
+          {
+            "text": "faster ",
+            "shap": -0.03660705860923318
+          },
+          {
+            "text": "referral ",
+            "shap": -0.03660705860923318
+          },
+          {
+            "text": "coordination. ",
+            "shap": -0.07321411721846637
+          },
+          {
+            "text": "Research ",
+            "shap": 0.0007406175136566162
+          },
+          {
+            "text": "teams ",
+            "shap": 0.0007406175136566162
+          },
+          {
+            "text": "cautioned ",
+            "shap": 0.0007406175136566162
+          },
+          {
+            "text": "that ",
+            "shap": 0.0007406175136566162
+          },
+          {
+            "text": "access ",
+            "shap": 0.0007406175136566162
+          },
+          {
+            "text": "and ",
+            "shap": 0.0007406175136566162
+          },
+          {
+            "text": "affordability ",
+            "shap": 0.0007406175136566162
+          },
+          {
+            "text": "remain ",
+            "shap": 0.0007406175136566162
+          },
+          {
+            "text": "major ",
+            "shap": 0.0007406175136566162
+          },
+          {
+            "text": "constraints.<",
+            "shap": 0.0014812350273132324
+          }
+        ],
+        "base_value": -3.3945877359821273
+      }
+    },
+    {
+      "id": "Ambrosio1994_real-and-fake-news_train_wl_news_whitelist_v11_selected_grouped.csv_16",
+      "source": "Snopes",
+      "topic": "BUSINESS",
+      "group": "E",
+      "title": "Kamala Harris' Father Has Been Described as a Marxist Economist",
+      "content": "Kamala Harris' father, Donald J. Harris, is an economist and former Stanford professor. Some reports describe his academic work as influenced by Marxist economic theory.",
+      "truth": {
+        "label": "TRUE"
+      },
+      "ai": {
+        "label": "FAKE",
+        "probs": {
+          "FAKE": 0.9999794960021973,
+          "TRUE": 2.050438524747733e-05
+        },
+        "correct": false,
+        "confidence": 0.9999794960021973,
+        "conf_bin": "high"
+      },
+      "xai": {
+        "target": "logit(P(FAKE))",
+        "title_segments": [
+          {
+            "text": "Kamala ",
+            "shap": 0.10956678787867227
+          },
+          {
+            "text": "Harris' ",
+            "shap": 0.07304452525244819
+          },
+          {
+            "text": "Father ",
+            "shap": 0.09031014954834654
+          },
+          {
+            "text": "Has ",
+            "shap": 0.09031014954834654
+          },
+          {
+            "text": "Been ",
+            "shap": 0.09031014954834654
+          },
+          {
+            "text": "Described ",
+            "shap": 0.18062029909669305
+          },
+          {
+            "text": "as ",
+            "shap": 0.09031014954834653
+          },
+          {
+            "text": "a ",
+            "shap": 0.09031014954834653
+          },
+          {
+            "text": "Marxist ",
+            "shap": 0.09031014954834654
+          },
+          {
+            "text": "Economist",
+            "shap": 0.09031014954834654
+          }
+        ],
+        "content_segments": [
+          {
+            "text": "Kamala ",
+            "shap": 0.09372860282883609
+          },
+          {
+            "text": "Harris' ",
+            "shap": 0.06248573521922405
+          },
+          {
+            "text": "father, ",
+            "shap": 0.062485735219224056
+          },
+          {
+            "text": "Donald ",
+            "shap": -0.001899723823253925
+          },
+          {
+            "text": "J. ",
+            "shap": -0.00379944764650785
+          },
+          {
+            "text": "Harris, ",
+            "shap": -0.0037994476465078504
+          },
+          {
+            "text": "is ",
+            "shap": -0.0018997238232539252
+          },
+          {
+            "text": "an ",
+            "shap": -0.0018997238232539252
+          },
+          {
+            "text": "economist ",
+            "shap": -0.0018997238232539252
+          },
+          {
+            "text": "and ",
+            "shap": -0.0018997238232539252
+          },
+          {
+            "text": "former ",
+            "shap": -0.0018997238232539252
+          },
+          {
+            "text": "Stanford ",
+            "shap": -0.0018997238232539252
+          },
+          {
+            "text": "professor. ",
+            "shap": -0.0037994476465078504
+          },
+          {
+            "text": "Some ",
+            "shap": 0.007287021726369858
+          },
+          {
+            "text": "reports ",
+            "shap": 0.007287021726369858
+          },
+          {
+            "text": "describe ",
+            "shap": 0.007287021726369858
+          },
+          {
+            "text": "his ",
+            "shap": 0.007287021726369858
+          },
+          {
+            "text": "academic ",
+            "shap": 0.007287021726369858
+          },
+          {
+            "text": "work ",
+            "shap": 0.007287021726369858
+          },
+          {
+            "text": "as ",
+            "shap": 0.007287021726369858
+          },
+          {
+            "text": "influenced ",
+            "shap": 0.007287021726369858
+          },
+          {
+            "text": "by ",
+            "shap": 0.007287021726369858
+          },
+          {
+            "text": "Marxist ",
+            "shap": 0.007287021726369858
+          },
+          {
+            "text": "economic ",
+            "shap": 0.007287021726369858
+          },
+          {
+            "text": "theory.<",
+            "shap": 0.014574043452739716
+          }
+        ],
+        "base_value": 9.510732566783245
+      }
+    },
+    {
+      "id": "Ambrosio1994_real-and-fake-news_train_wl_news_whitelist_v11_selected_grouped.csv_19",
+      "source": "Investopedia",
+      "topic": "BUSINESS",
+      "group": "A",
+      "title": "What Is Stagflation, What Causes It, and Why Is It Bad?",
+      "content": "Economic analysts said stagflation risk rises when weak growth overlaps with sustained price pressure. Recent reporting described how this mix can squeeze household purchasing power while limiting business investment. Policy briefings noted that trade-offs between inflation control and employment goals become sharper under this scenario.",
+      "truth": {
+        "label": "TRUE"
+      },
+      "ai": {
+        "label": "FAKE",
+        "probs": {
+          "FAKE": 0.9999727010726929,
+          "TRUE": 2.734448207775131e-05
+        },
+        "correct": false,
+        "confidence": 0.9999727010726929,
+        "conf_bin": "high"
+      },
+      "xai": {
+        "target": "logit(P(FAKE))",
+        "title_segments": [
+          {
+            "text": "What ",
+            "shap": 0.18986130505800247
+          },
+          {
+            "text": "Is ",
+            "shap": 0.18986130505800247
+          },
+          {
+            "text": "Stagflation, ",
+            "shap": 0.7594452202320099
+          },
+          {
+            "text": "What ",
+            "shap": 0.1960251048207283
+          },
+          {
+            "text": "Causes ",
+            "shap": 0.1960251048207283
+          },
+          {
+            "text": "It, ",
+            "shap": 0.3920502096414566
+          },
+          {
+            "text": "and ",
+            "shap": 0.1960251048207283
+          },
+          {
+            "text": "Why ",
+            "shap": 0.1960251048207283
+          },
+          {
+            "text": "Is ",
+            "shap": 0.1960251048207283
+          },
+          {
+            "text": "It ",
+            "shap": 0.1960251048207283
+          },
+          {
+            "text": "Bad?",
+            "shap": 0.3920502096414566
+          }
+        ],
+        "content_segments": [
+          {
+            "text": "Economic ",
+            "shap": -0.06278822239902285
+          },
+          {
+            "text": "analysts ",
+            "shap": -0.06278822239902285
+          },
+          {
+            "text": "said ",
+            "shap": -0.06278822239902285
+          },
+          {
+            "text": "stagflation ",
+            "shap": -0.1255764447980457
+          },
+          {
+            "text": "risk ",
+            "shap": -0.06278822239902283
+          },
+          {
+            "text": "rises ",
+            "shap": -0.06278822239902283
+          },
+          {
+            "text": "when ",
+            "shap": -0.06278822239902283
+          },
+          {
+            "text": "weak ",
+            "shap": -0.06278822239902283
+          },
+          {
+            "text": "growth ",
+            "shap": -0.06278822239902283
+          },
+          {
+            "text": "overlaps ",
+            "shap": -0.1255764447980457
+          },
+          {
+            "text": "with ",
+            "shap": -0.06278822239902285
+          },
+          {
+            "text": "sustained ",
+            "shap": -0.06278822239902285
+          },
+          {
+            "text": "price ",
+            "shap": -0.06278822239902283
+          },
+          {
+            "text": "pressure. ",
+            "shap": -0.12557644479804567
+          },
+          {
+            "text": "Recent ",
+            "shap": -0.06278822239902285
+          },
+          {
+            "text": "reporting ",
+            "shap": -0.06278822239902285
+          },
+          {
+            "text": "described ",
+            "shap": -0.06278822239902285
+          },
+          {
+            "text": "how ",
+            "shap": -0.06278822239902285
+          },
+          {
+            "text": "this ",
+            "shap": -0.06278822239902285
+          },
+          {
+            "text": "mix ",
+            "shap": -0.06278822239902285
+          },
+          {
+            "text": "can ",
+            "shap": -0.06278822239902285
+          },
+          {
+            "text": "squeeze ",
+            "shap": -0.06278822239902285
+          },
+          {
+            "text": "household ",
+            "shap": -0.06278822239902285
+          },
+          {
+            "text": "purchasing ",
+            "shap": -0.06278822239902285
+          },
+          {
+            "text": "power ",
+            "shap": -0.06278822239902285
+          },
+          {
+            "text": "while ",
+            "shap": -0.06278822239902285
+          },
+          {
+            "text": "limiting ",
+            "shap": -0.06278822239902285
+          },
+          {
+            "text": "business ",
+            "shap": -0.06278822239902285
+          },
+          {
+            "text": "investment. ",
+            "shap": -0.1255764447980457
+          },
+          {
+            "text": "Policy ",
+            "shap": 0.00044892051003196025
+          },
+          {
+            "text": "briefings ",
+            "shap": 0.00044892051003196025
+          },
+          {
+            "text": "noted ",
+            "shap": 0.00044892051003196025
+          },
+          {
+            "text": "that ",
+            "shap": 0.00044892051003196025
+          },
+          {
+            "text": "trade-offs ",
+            "shap": 0.0013467615300958805
+          },
+          {
+            "text": "between ",
+            "shap": 0.0004489205100319602
+          },
+          {
+            "text": "inflation ",
+            "shap": 0.00044892051003196025
+          },
+          {
+            "text": "control ",
+            "shap": 0.00044892051003196025
+          },
+          {
+            "text": "and ",
+            "shap": 0.00044892051003196025
+          },
+          {
+            "text": "employment ",
+            "shap": 0.00029442527077414775
+          },
+          {
+            "text": "goals ",
+            "shap": 0.00029442527077414775
+          },
+          {
+            "text": "become ",
+            "shap": 0.00029442527077414775
+          },
+          {
+            "text": "sharper ",
+            "shap": 0.00029442527077414775
+          },
+          {
+            "text": "under ",
+            "shap": 0.0002944252707741477
+          },
+          {
+            "text": "this ",
+            "shap": 0.0002944252707741477
+          },
+          {
+            "text": "scenario.<",
+            "shap": 0.0005888505415482954
+          }
+        ],
+        "base_value": 9.473934782860486
+      }
+    }
+  ]
+}
