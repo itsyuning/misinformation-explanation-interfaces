@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Study List Launcher</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        background: linear-gradient(135deg, #0b2239, #102f4e);
+        color: #10212e;
+      }
+      .wrap {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 20px;
+      }
+      .card {
+        width: min(720px, 100%);
+        background: #f6efdf;
+        border-radius: 16px;
+        padding: 20px;
+        box-shadow: 0 18px 60px rgba(5, 12, 18, 0.35);
+      }
+      h1 {
+        margin: 0 0 8px;
+        font-size: 30px;
+      }
+      p {
+        margin: 0 0 16px;
+        line-height: 1.5;
+      }
+      .links {
+        display: grid;
+        gap: 10px;
+      }
+      a {
+        display: block;
+        text-decoration: none;
+        border: 1px solid rgba(16, 33, 46, 0.2);
+        border-radius: 10px;
+        padding: 10px 12px;
+        color: #10212e;
+        background: rgba(255, 255, 255, 0.75);
+      }
+      a:hover {
+        background: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <section class="card">
+        <h1>Study List Launcher</h1>
+        <p>Use these links to assign participants to one of the five lists.</p>
+        <div class="links">
+          <a href="./list1.html">List 1</a>
+          <a href="./list2.html">List 2</a>
+          <a href="./list3.html">List 3</a>
+          <a href="./list4.html">List 4</a>
+          <a href="./list5.html">List 5</a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

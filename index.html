@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI-Assisted Misinformation Judgment Study</title>
+    <link rel="stylesheet" href="./styles.css?v=20260414a" />
+  </head>
+  <body>
+    <div class="bg" aria-hidden="true"></div>
+
+    <section class="intro" id="introPage">
+      <article class="introCard">
+        <p class="introCard__kicker">Before You Start</p>
+        <h1 class="introCard__title">AI-Assisted Misinformation Judgment Study</h1>
+        <p class="introCard__lead">
+          In this task, you will evaluate whether news items are TRUE or FAKE. There are 25 items in total and
+          it usually takes about 15-20 minutes. Please finish in one session and rely on your own judgment.
+          Some screens show additional information automatically as part of the study design.
+        </p>
+
+        <div class="introCard__about" aria-label="About the AI assistant" role="note">
+          <div class="introCard__aboutTitle">Important: How to read AI help</div>
+          <ul class="introCard__aboutList">
+            <li>This study uses an AI system to give a suggested TRUE/FAKE judgment for each news item.</li>
+            <li>Highlighted words show which parts of the text influenced the AI suggestion the most.</li>
+            <li>Use AI as guidance only. It can be wrong.</li>
+          </ul>
+        </div>
+
+        <div class="introCard__status" id="introAssignedList">Preparing study...</div>
+
+        <div class="introCard__steps">
+          <div class="introStep"><span>1</span><p>Read each headline and excerpt.</p></div>
+          <div class="introStep"><span>2</span><p>Give your initial TRUE or FAKE judgment and confidence.</p></div>
+          <div class="introStep"><span>3</span><p>Review the next screen and submit your final judgment.</p></div>
+        </div>
+
+        <button class="btn introCard__start" id="introStartBtn" type="button" disabled>Preparing study...</button>
+
+      </article>
+    </section>
+
+    <div id="experimentRoot" hidden>
+
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand__kicker">Study Interface</div>
+        <div class="brand__title">AI-Assisted Misinformation Judgment Study</div>
+      </div>
+      <div class="meta">
+          <div class="meta__row">
+            <div class="pill" id="conditionPill">C1 - Prediction-only</div>
+            <div class="pill pill--quiet" id="trialPill">Trial 1 / 1</div>
+            <div class="pill pill--quiet" id="seedPill">pid=-- seed=--</div>
+          </div>
+          <div class="meta__row">
+            <label class="select">
+              <span class="select__label">List</span>
+              <select id="listSelect">
+                <option value="1" selected>List 1</option>
+                <option value="2">List 2</option>
+                <option value="3">List 3</option>
+                <option value="4">List 4</option>
+                <option value="5">List 5</option>
+              </select>
+            </label>
+            <button class="btn btn--ghost" id="restartBtn" type="button">Restart</button>
+          </div>
+        </div>
+      </header>
+
+    <main class="shell">
+      <section class="news" aria-label="News item">
+        <article class="card card--news">
+          <div class="card__header">
+            <div class="badge" id="sourceBadge">Stimulus</div>
+            <div class="tiny" id="itemId">item-000</div>
+          </div>
+          <h1 class="headline" id="headline">--</h1>
+          <p class="excerpt" id="excerpt">--</p>
+          <div class="divider"></div>
+          <div class="hint">
+            Read first. You will give an initial judgment before seeing any AI output.
+          </div>
+        </article>
+
+        <article class="card card--xai" id="xaiCard" hidden>
+          <div class="card__header">
+            <div class="badge badge--xai">Explanation</div>
+            <div class="tiny" id="xaiTarget"></div>
+          </div>
+
+          <div class="legend">
+            <div class="legend__item">
+              <span class="swatch swatch--red"></span>
+              <span>pushes toward FAKE</span>
+            </div>
+            <div class="legend__item">
+              <span class="swatch swatch--blue"></span>
+              <span>pushes toward TRUE</span>
+            </div>
+            <div class="legend__item legend__item--right">
+              <span class="tiny">Highlighted words show what influenced the AI's suggestion most.</span>
+            </div>
+          </div>
+
+          <div class="xai" id="xaiText"></div>
+          <div class="tiny xaiStats" id="xaiStats" aria-live="polite"></div>
+
+          <div class="xaiControls" id="xaiControls" hidden>
+            <button class="btn btn--soft" id="revealNextBtn" type="button">Reveal next highlight</button>
+            <div class="tiny" id="revealCounter">0 / 0 revealed</div>
+            <button class="btn btn--ghost" id="revealAllBtn" type="button">Reveal all</button>
+          </div>
+
+          <div class="boundary" id="boundaryCue" hidden>
+            <div class="boundary__title">Boundary cue</div>
+            <div class="boundary__text">
+              This model may fail on satire, ambiguous framing, or unfamiliar events. Treat it as one input among others.
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <aside class="side" aria-label="Judgment panel">
+        <section class="card card--panel" id="stageCard">
+          <div class="stageHeader">
+            <div>
+              <div class="stageHeader__kicker" id="stageKicker">Stage 1</div>
+              <div class="stageHeader__title" id="stageTitle">Initial judgment</div>
+            </div>
+            <div class="timer" id="timer">00:00</div>
+          </div>
+
+          <div class="panelBody">
+            <div class="summary" id="summaryBox" hidden>
+              <div class="summary__row">
+                <div class="summary__key">Initial</div>
+                <div class="summary__val" id="initialSummary">--</div>
+              </div>
+              <div class="summary__row">
+                <div class="summary__key">Confidence</div>
+                <div class="summary__val" id="initialConfSummary">--</div>
+              </div>
+            </div>
+
+            <div id="controlsBox">
+              <div class="choiceRow" role="group" aria-label="Choose a label">
+                <button class="choice" id="chooseTrue" type="button">TRUE</button>
+                <button class="choice" id="chooseFake" type="button">FAKE</button>
+              </div>
+
+              <div class="sliderBlock">
+                <div class="sliderBlock__top">
+                  <div class="sliderBlock__label">Confidence</div>
+                  <div class="sliderBlock__value" id="confValue">50</div>
+                </div>
+                <input id="confSlider" type="range" min="0" max="100" value="50" />
+                <div class="sliderBlock__ticks">
+                  <span>0</span><span>25</span><span>50</span><span>75</span><span>100</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="ai" id="aiPanel" hidden>
+              <div class="ai__header">
+                <div class="badge badge--ai">AI output</div>
+                <div class="tiny" id="aiModel">hamzab/roberta-fake-news-classification</div>
+              </div>
+              <div class="ai__body">
+                <div class="ai__label">
+                  <div class="ai__labelKey">Prediction</div>
+                  <div class="ai__labelVal" id="aiLabel">--</div>
+                </div>
+                <div class="ai__prob">
+                  <div class="ai__probTop">
+                    <div class="ai__probKey">Probability</div>
+                    <div class="ai__probVal" id="aiProb">--</div>
+                  </div>
+                  <div class="meter" aria-hidden="true">
+                    <div class="meter__fill" id="aiMeter"></div>
+                  </div>
+                  <div class="tiny ai__probFoot" id="aiProbFoot">P(TRUE)=--, P(FAKE)=--</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="note" id="noteBox"></div>
+            <div class="note" id="uploadStatus" hidden></div>
+
+            <label class="textarea" id="whyBox" hidden>
+              <span class="textarea__label">Optional: What influenced you most?</span>
+              <textarea id="whyText" rows="4" placeholder="One or two sentences..."></textarea>
+            </label>
+
+            <div class="actions">
+              <button class="btn" id="primaryBtn" type="button">Reveal AI</button>
+              <button class="btn btn--soft" id="retryUploadBtn" type="button" hidden>Retry upload</button>
+              <button class="btn btn--ghost" id="downloadBtn" type="button" hidden>Download log</button>
+            </div>
+          </div>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <div class="tiny">
+        This is a research prototype for studying decision dynamics (shift, alignment, confidence, calibration).
+      </div>
+    </footer>
+
+    <section class="debrief" id="debriefPage" hidden aria-labelledby="debriefTitle">
+      <article class="debriefCard card">
+        <div class="debriefTop">
+          <div class="debriefIcon" aria-hidden="true">✓</div>
+          <p class="debriefTop__kicker">Study complete</p>
+          <h1 class="debriefTop__title" id="debriefTitle">Thank you for your participation</h1>
+        </div>
+
+        <div class="debriefSections">
+          <section class="debriefSection" aria-label="About this study">
+            <h2>About this study</h2>
+            <p>
+              This study examines how different AI explanation formats influence how people evaluate the credibility of
+              online news-style content, revise their judgments, and report confidence during AI-assisted misinformation
+              evaluation.
+            </p>
+          </section>
+
+          <section class="debriefSection" aria-label="Why some content may have seemed misleading">
+            <h2>Why some content may have seemed misleading</h2>
+            <p>
+              Some of the news-style items shown in the study contained misleading or false content, and some AI outputs
+              shown during the task may also have been incorrect. This was necessary because the study investigates not
+              only whether people follow AI advice, but whether different interface designs support more careful and
+              appropriately calibrated judgment when AI can be right or wrong.
+            </p>
+          </section>
+
+          <section class="debriefSection" aria-label="Your data and withdrawal rights">
+            <h2>Your data</h2>
+            <p>
+              Taking part was voluntary, and you can stop at any time before submitting your responses.
+            </p>
+            <p>
+              After submission, you may request withdrawal of your personal data within one month by contacting the
+              researcher. If your responses have already been fully anonymized and can no longer be linked to you, it may
+              no longer be possible to remove your individual data.
+            </p>
+          </section>
+
+          <section class="debriefSection" aria-label="Contact details">
+            <h2>Contact</h2>
+            <p>Researcher: Yuning Yao - y.yao.7@umail.leidenuniv.nl</p>
+            <p>Supervisor: Derya Soydaner - d.soydaner@liacs.leidenuniv.nl</p>
+            <p>For questions about your rights as a participant: ethicscommittee@science.leidenuniv.nl</p>
+            <p>This study was reviewed under Leiden University Faculty governance and ethics procedures.</p>
+          </section>
+
+          <section class="debriefSection" aria-label="Item clarification">
+            <h2>Item clarification</h2>
+            <p>
+              To reduce the risk of participants leaving the study with false impressions, this page includes an item
+              clarification section. By opening "View item clarification", you can review the veracity status of the
+              study materials shown in the task.
+            </p>
+            <details class="debriefDisclosure" id="debriefClarificationDisclosure">
+              <summary>View item clarification</summary>
+              <ul class="debriefClarificationList" id="debriefClarificationList"></ul>
+            </details>
+          </section>
+        </div>
+
+        <div class="debriefActions">
+          <button class="btn" id="debriefFinishBtn" type="button">Finish</button>
+          <button class="btn btn--soft" id="debriefSaveBtn" type="button">Download or save this debrief</button>
+        </div>
+
+        <p class="debriefNote">You may keep a screenshot, printout, or PDF copy of this page for your records.</p>
+        <p class="debriefCloseHint" id="debriefCloseHint" aria-live="polite"></p>
+      </article>
+    </section>
+
+    </div>
+
+    <script src="./app.js?v=20260529a"></script>
+  </body>
+</html>
