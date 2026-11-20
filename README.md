@@ -30,4 +30,4 @@ Inputs are read from `data/final/`; generated results are written to `analysis/s
 
 The fixed stimulus pool is the analysis input; generation utilities are not a substitute for this archived pool. See `analysis/statistical/README.txt` for details of the analysis inputs and models.
 
-The model/explanation workflow has separate dependencies listed in the root `requirements.txt`. No manuscript PDF or LaTeX source is included in this materials package.
+The model/explanation workflow has separate dependencies listed in the root `requirements.txt`.
